@@ -1,0 +1,90 @@
+。也算是记录自己在从事编程工作的成长足迹，通过博客可以促进博主与阅读者的共同进步，结交更多志同道合的朋友。
+。
+整理的Java知识体系主要包括
+等，包含了作为一个Java工程师在开发工作学习中需要用到或者可能用到的绝大部分知识。
+，希望大家跟进自己的薄弱点，查缺补漏，根据自己感兴趣的方面多学习，学的精通一点，从现在开始行动起来。
+。
+Java面试总结汇总，欢迎阅读，文章持续更新中…
+大部分已完成
+待整理：
+Java开发必会的反编译知识（附支持对Lambda进行反编译的工具）
+一文读懂什么是Java中的自动拆装箱
+Java的枚举类型用法介绍
+类、枚举、接口、数组、可变参数
+泛型、序列化
+待整理：
+抽象
+继承、封装、多态
+接口、抽象类、内部类
+迭代器、增强for、泛型
+待整理：
+File、递归
+字节流、字节缓冲流
+编码表、编码方式、转换流、序列化、序列化流、打印流、commons-io
+网络概述、网络模型
+Socket原理机制
+UDP
+TCP/IP
+协议、OSI 七层协议、HTTP、HTTP2.0、HTTPS
+网络安全
+​	XSS、CSRF、SQL注入、Hash Dos、脚本注入、漏洞扫描工具、验证码
+​	DDoS防范、用户隐私信息保护、序列化漏洞
+​	加密解密、对称加密、哈希算法、非对称加密
+​	服务安全、数据安全、数据备份
+​	网络隔离、登录跳板机、非外网分离
+​	认证、授权
+Date、DateFormat、Calendar
+String、StringBuffer、StringBuilder、正则表达式
+Number、Radom、Math、System、包装类
+Arrays、Collections
+待整理：OkHttp、commons-lang3
+JUnit
+待整理：
+公平锁 & 非公平锁
+乐观锁 & 悲观锁
+可重入锁 & 不可重入锁
+互斥锁 & 共享锁
+死锁
+语言只是编程工具，算法才是编程之魂！
+高可用架构
+高并发架构
+可伸缩架构
+集群
+常用设计模式
+创建型：
+
+单例模式、工厂模式、抽象工厂模式
+结构型：
+
+适配器模式、外观模式、代理模式、装饰器模式
+行为型：
+
+观察者模式、策略模式、模板模式
+如何学习一个框架或者技术
+常用框架
+Sharding JDBC
+MyCat
+待整理：Tomcat各组件作用	Tomcat集群	Tomcat面试题
+本地缓存
+客户端缓存
+服务端缓存
+​	web缓存，Redis，Memcached，Ehcache
+常规监控
+APM
+持续集成(CI/CD)：Jenkins，环境分离
+自动化运维：Ansible，puppet，chef
+测试：TDD 理论，单元测试，压力测试，全链路压测，A/B 、灰度、蓝绿测试
+虚拟化：KVM，Xen，OpenVZ
+容器技术：Docker
+云技术：OpenStack
+DevOps
+文档管理
+计算机操作系统
+计算机原理
+Linux
+CPU
+进程，线程，协程
+IaaS、SaaS、PaaS、虚拟化技术、openstack、Serverlsess
+Solr、Lucene、Nutch、Elasticsearch
+Shiro、Spring Security
+哈希算法、Merkle树、公钥密码算法、共识算法、Raft协议、Paxos 算法与 Raft 算法、拜占庭问题与算法、消息认证码与数字签名

@@ -1,0 +1,450 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="edge">
+    <meta name="“renderer”" content="“webkit”">
+    <meta name="referrer" content="always">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+
+    <link rel="search" type="application/opensearchdescription+xml" title="python - 读书 - 豆瓣搜索" href="/opensearch">
+
+    <title>python - 读书 - 豆瓣搜索</title>
+    <meta name="description" content="python - 读书 - 豆瓣搜索">
+    <link rel="stylesheet" href="https://img3.doubanio.com/f/shire/3e5dfc68b0f376484c50cf08a58bbca3700911dc/css/douban.css">
+    <style>
+      #wrapper { width: 1040px; box-sizing: border-box;}
+      @media (max-width: 1024px) { #wrapper { width: 1000px } }
+    </style>
+    <script type="text/javascript" defer="" async="" src="https://img3.doubanio.com/dae/fundin/piwik.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5WP579"></script><script type="text/javascript" src="//img1.doubanio.com/eDRjYjNvdi9mL2FkanMvZTQ2YTNkMjgwYjBiMzc2OWE4YTI3MWFhMzI0NTQwMTBlMWY3OTYzMy9hZC5yZWxlYXNlLmpz" async="true"></script><script src="//img3.doubanio.com/dae/staticng/s/search/2dc13eac880d144d0a1e7767d6b41f018cc80c97/dist/jquery.js"></script>
+
+    
+    
+  
+
+    <style type="text/css">
+    #root {
+      min-height: 500px;
+    }
+
+    #root > .search-title {
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 30px;
+      padding: 0;
+      color: #494949;
+    }
+  </style>
+  <style type="text/css">/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}</style><style type="text/css" data-styled-components="" data-styled-components-is-local="false" nonce="undefined">
+/* sc-component-id: sc-global-90603819 */
+</style><style type="text/css" data-styled-components="fniQQf eJWSlY fBlcMw hxNRHc jVmQgr bDInVf eszZtj ksdtVX eSyqVy dkpfYo" data-styled-components-is-local="true" nonce="undefined">
+/* sc-component-id: sc-bwzfXH */
+.sc-bwzfXH {}.hxNRHc{margin:10px 0;} .hxNRHc,.hxNRHc span{line-height:1;} .hxNRHc .score{color:#f29702;} .hxNRHc .label{color:#666;margin-left:5px;}
+/* sc-component-id: sc-bxivhb */
+.sc-bxivhb {}.eJWSlY{margin-bottom:30px;} .eJWSlY .item-root{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;} .eJWSlY .cover-link{background:none;width:65px;max-height:97px;margin-right:15px;} .eJWSlY .cover{width:65px;max-height:97px;} .eJWSlY .detail{-webkit-flex:1;-ms-flex:1;flex:1;min-width:0;} .eJWSlY .detail .title{font-size:14px;font-weight:500;overflow:visible;position:relative;top:-1px;} .eJWSlY .detail .label{height:12px;font-size:12px;margin-left:5px;} .eJWSlY .detail .title-text,.eJWSlY .detail .label,.eJWSlY .detail .label-actions{display:inline;vertical-align:middle;line-height:1.5;} .eJWSlY .detail .label-actions{display:inline;margin-left:5px;} .eJWSlY .detail .label-actions a{display:inline-block;vertical-align:middle;margin-left:5px;position:relative;top:-1px;} .eJWSlY .detail .label-actions a.icon{width:19px;height:19px;} .eJWSlY .detail .label-actions a.icon[data-icon="play"]{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAA2CAMAAAAS71J7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMDgwMTE3NDA3MjA2ODExODA4M0VCNTY4QTU4Qzg1MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyNTg3QjBGREE3NjMxMUUzQkZDOUE1OTlBRUUzRjU3NSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyNTg3QjBGQ0E3NjMxMUUzQkZDOUE1OTlBRUUzRjU3NSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REQyODYxNEMxQzIwNjgxMTgwODNFQjU2OEE1OEM4NTEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDA4MDExNzQwNzIwNjgxMTgwODNFQjU2OEE1OEM4NTEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz78rLRsAAABC1BMVEWpqamqqqp4w6f39/evr6+wsLD9/f3Jycn4+Pjy+faAx6z19fWo2MaoqKj0+vi03s75+fm74dN7xKn8/v2x3Mz8/Pzp6emmpqaSz7iysrL1+/jR0dG2trasrKyz3c7V1dXPz8/u9/SFybD6/fzq6uq74dKV0LqlpaWY0bza7+fe8Ol/xquX0bvz+veBx63A49aW0Luk18Tv+PSGybD7/f3y+ffv+PXi4uL+/v6rq6un2MaCx62np6ey3c2/49be3t7Dw8Pk8+329vbO6d/6+vqZ0ryz3c3a2trHx8f3+/nKysq+vr6jo6O238/X7eXd8OnCwsLj4+Px+fZ8xar7+/vv7+/b7+j///////88c5bwAAAAWXRSTlP/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AE+FAQ8AAAFsSURBVHjazJFXd4JAEIUHpEkRARV7wW7sxpgYS3rvDf//L8myCwbUt+Qh9xzOGT52585cYOVo2Lsc6aNGb4jfAD1ltas+p+10S+3my4RFktOwTRSeJiMOM2pV+0dabR+xvGz7JedXcCB2AmwslkCL4XJw6sFYFdpNXOn0o0FYsw/WG672aLp7TryPQTc8RtO4jUGDFfaYrt2659x+7/QgQvp99aFKfNtPPt/N+Tpovq09rvC+2ta+KBfZy2Usk1xQfnNRbeH8xLmbH1Jp0bB0q7EorXPe1O+ZlAUqR0FWWrM4w2YqUTtaybBMnDCB4kPuzCGeEhzGQcG3WwE4xBg+kAHPrEBihQALsRKkirh8+fRgMQWQcIq4Qk0OCUsAUNiTU5SZOSGXjyDH4UoxlfrDPf6cc8/ZdVOZvX6450i/i7p5c7bu5/qeXPt8l2S+qOtqC2i+XXvs3DeQyx3JZWd+SMutnP/+X/5f9i3AAA1qF81d3JLKAAAAAElFTkSuQmCC) left top no-repeat;background-size:cover;} .eJWSlY .detail .label-actions a.icon[data-icon="play"]:hover{background-position:left -23px;} .eJWSlY .detail .meta{margin-top:7px;color:#999;font-size:12px;line-height:1.5;overflow:visible;} .eJWSlY .detail .meta.abstract{margin-top:10px;line-height:1.4;} .eJWSlY .gallery-topics{margin-top:20px;padding-left:80px;} .eJWSlY .gallery-topics .item{position:relative;min-height:20px;padding-left:40px;margin-bottom:12px;} .eJWSlY .gallery-topics .item:last-of-{margin-bottom:0;} .eJWSlY .gallery-topics .item .label{width:34px;border-color:#CCCCCC;border-width:1px;border-style:solid;border-radius:4px;font-size:12px;line-height:19px;text-align:center;color:#5D5D5D;position:absolute;left:0;top:0;} .eJWSlY .gallery-topics .item .detail h2{line-height:18px;font-size:13px;padding:0;margin:0;margin-bottom:5px;} .eJWSlY .gallery-topics .item .detail .info{line-height:16px;font-size:11px;color:#9B9B9B;padding-left:5px;}
+/* sc-component-id: sc-ifAKCX */
+.sc-ifAKCX {}.jVmQgr span.gact a,.jVmQgr .status-text{margin-right:15px;font-size:12px;line-height:1;text-align:left;display:inline-block;}
+/* sc-component-id: sc-EHOje */
+.sc-EHOje {}.bDInVf.gact a:link,.bDInVf.gact a:active,.bDInVf.gact a:visited{color:#ccc;} .bDInVf.gact a:hover{background:#37a;border:none;color:#fff;}
+/* sc-component-id: sc-bZQynM */
+.sc-bZQynM {}.fBlcMw .rating{margin:10px 0;} .fBlcMw .detail .meta{display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;display:block;} .fBlcMw .detail .meta.abstract{margin-top:-3px;line-height:1.5;} .fBlcMw .detail .meta.abstract_2{margin-top:0px;} .fBlcMw ._yudxeasrp{margin:7px 0 0;display:inline-block;} .fBlcMw ._yudxeasrp .status-text{color:#666;} .fBlcMw ._ad8vfotrq{float:right;margin-right:-15px;}
+/* sc-component-id: sc-htoDjs */
+.sc-htoDjs {}.eszZtj{margin:60px 0 20px 0;} .eszZtj a{font-size:14px;} .eszZtj a.activate,.eszZtj a.activate:hover{-webkit-text-decoration:none;text-decoration:none;cursor:default;background:#83bf73;pointer-events:none;} .eszZtj .prev.activate,.eszZtj .next.activate{color:#aaa;background-color:inherit;}
+/* sc-component-id: sc-dnqmqq */
+.sc-dnqmqq {}.ksdtVX{margin-bottom:25px;} .ksdtVX .title{font-size:14px;text-align:left;color:#007722;margin-bottom:14px;} .ksdtVX .link{margin-bottom:11px;}
+/* sc-component-id: sc-iwsKbI */
+.sc-iwsKbI {}.eSyqVy{font-size:14px;}
+/* sc-component-id: sc-gZMcBi */
+.sc-gZMcBi {}.dkpfYo{display:none;position:fixed;left:0;top:0;width:100%;height:100%;border:none;z-index:999;}
+/* sc-component-id: sc-gqjmRU */
+.sc-gqjmRU {}.fniQQf ._akmux7lrs{overflow:hidden;} .fniQQf ._p3vzg6mrr{font-size:25px;font-weight:bold;margin-bottom:30px;padding:0;color:#494949;} .fniQQf ._pjs5fenrv{width:675px;float:left;padding-top:15px;} .fniQQf ._3j6sfvfrw{width:300px;float:right;margin-bottom:30px;} .fniQQf ._obf915arx ._4c9xrlvry{margin-bottom:24px;font-size:12px;color:#494949;} .fniQQf ._obf915arx ._4c9xrlvry:nth-child(2){margin-bottom:20px;} .fniQQf ._e6cokbgrz{margin-bottom:20px;}</style><script src="https://ssl.google-analytics.com/ga.js" async="true"></script></head>
+  <body>
+    
+  
+  
+
+
+
+    <link href="//img3.doubanio.com/dae/accounts/resources/f5f3d66/shire/bundle.css" rel="stylesheet" type="text/css">
+
+
+
+<div id="db-global-nav" class="global-nav">
+  <div class="bd">
+    
+<div class="top-nav-info">
+  <a href="https://accounts.douban.com/passport/login?source=main" class="nav-login" rel="nofollow">登录/注册</a>
+</div>
+
+
+    <div class="top-nav-doubanapp">
+  <a href="https://www.douban.com/doubanapp/app?channel=top-nav" class="lnk-doubanapp">下载豆瓣客户端</a>
+  <div id="doubanapp-tip">
+    <a href="https://www.douban.com/doubanapp/app?channel=qipao" class="tip-link">豆瓣 <span class="version">6.0</span> 全新发布</a>
+    <a href="javascript: void 0;" class="tip-close">×</a>
+  </div>
+  <div id="top-nav-appintro" class="more-items">
+    <p class="appintro-title">豆瓣</p>
+    <p class="qrcode">扫码直接下载</p>
+    <div class="download">
+      <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=iOS">iPhone</a>
+      <span>·</span>
+      <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=Android" class="download-android">Android</a>
+    </div>
+  </div>
+</div>
+
+    
+
+
+<div class="global-nav-items">
+  <ul>
+    <li class="on">
+      <a href="https://www.douban.com" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-main&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣</a>
+    </li>
+    <li class="">
+      <a href="https://book.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
+    </li>
+    <li class="">
+      <a href="https://movie.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
+    </li>
+    <li class="">
+      <a href="https://music.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">音乐</a>
+    </li>
+    <li class="">
+      <a href="https://www.douban.com/location" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">同城</a>
+    </li>
+    <li class="">
+      <a href="https://www.douban.com/group" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
+    </li>
+    <li class="">
+      <a href="https://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
+    </li>
+    <li class="">
+      <a href="https://douban.fm/?from_=shire_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
+    </li>
+    <li class="">
+      <a href="https://time.douban.com/?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
+    </li>
+    <li class="">
+      <a href="https://market.douban.com/?utm_campaign=douban_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-market&quot;,&quot;uid&quot;:&quot;0&quot;}">豆品</a>
+    </li>
+    <li>
+      <a href="#more" class="bn-more"><span>更多</span></a>
+      <div class="more-items">
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td>
+                <a href="https://ypy.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣摄影</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+</div>
+
+  </div>
+</div>
+<script>
+  ;window._GLOBAL_NAV = {
+    DOUBAN_URL: "https://www.douban.com",
+    N_NEW_NOTIS: 0,
+    N_NEW_DOUMAIL: 0
+  };
+</script>
+
+
+
+    <script src="//img3.doubanio.com/dae/accounts/resources/f5f3d66/shire/bundle.js" defer="defer"></script>
+
+
+
+
+  
+
+
+
+    <link href="//img3.doubanio.com/dae/accounts/resources/f5f3d66/book/bundle.css" rel="stylesheet" type="text/css">
+
+
+
+
+<div id="db-nav-book" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+    <div class="nav-logo">
+      <a href="https://book.douban.com">豆瓣读书</a>
+    </div>
+    <div class="nav-search">
+      <form action="https://search.douban.com/book/subject_search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">
+          </label>
+          <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名、作者、ISBN" value="python" autocomplete="off"></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+          <input type="hidden" name="cat" value="1001">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="nav-secondary">
+    
+
+<div class="nav-items">
+  <ul>
+    <li><a href="https://book.douban.com/cart/">购书单</a>
+    </li>
+    <li><a href="https://read.douban.com/ebooks/?dcs=book-nav&amp;dcm=douban" target="_blank">电子图书</a>
+    </li>
+    <li><a href="https://market.douban.com/book?utm_campaign=book_nav_freyr&amp;utm_source=douban&amp;utm_medium=pc_web">豆瓣书店</a>
+    </li>
+    <li><a href="https://book.douban.com/annual/2019?source=navigation" target="_blank">2019年度榜单</a>
+    </li>
+    <li><a href="https://m.douban.com/standbyme/annual2019?source=navigation" target="_blank">2019书影音报告</a>
+    </li>
+    <li class=" book-cart"><a href="https://market.douban.com/cart/?biz_type=book&amp;utm_campaign=book_nav_cart&amp;utm_source=douban&amp;utm_medium=pc_web" target="_blank">购物车</a>
+    </li>
+  </ul>
+</div>
+
+    <a href="https://book.douban.com/annual/2019?source=book_navigation" class="bookannual"></a>
+  </div>
+</div>
+
+<script id="suggResult" type="text/x-jquery-tmpl">
+  <li data-link="{{= url}}">
+            <a href="{{= url}}" onclick="moreurl(this, {from:'book_search_sugg', query:'{{= keyword }}', subject_id:'{{= id}}', i: '{{= index}}', type: '{{= type}}'})">
+            <img src="{{= pic}}" width="40" />
+            <div>
+                <em>{{= title}}</em>
+                {{if year}}
+                    <span>{{= year}}</span>
+                {{/if}}
+                <p>
+                {{if type == "b"}}
+                    {{= author_name}}
+                {{else type == "a" }}
+                    {{if en_name}}
+                        {{= en_name}}
+                    {{/if}}
+                {{/if}}
+                 </p>
+            </div>
+        </a>
+        </li>
+  </script>
+
+
+
+
+    <script src="//img3.doubanio.com/dae/accounts/resources/f5f3d66/book/bundle.js" defer="defer"></script>
+
+
+
+
+
+    <div id="wrapper">
+      
+      
+  <div id="root" class="root"><div class="sc-gqjmRU fniQQf"><div class="_1qhd6b0ru"><h1 class="_p3vzg6mrr">搜索 python</h1></div><div class="_akmux7lrs"><div class="_pjs5fenrv"><div><div class="sc-bxivhb eJWSlY"><div class="item-root"><div class="detail"><div class="title"><a href="https://book.douban.com/series/50553" class="title-text">[丛书] 图灵程序设计丛书·Python系列</a></div><div class="meta abstract" style="overflow: hidden;"><div class="meta abstract" style="line-height: 16.8px;">人民邮电出版社 / 共38册</div></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/26829016/" data-moreurl="onclick=&quot;moreurl(this,{i:'0',query:'python',subject_id:'26829016',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img9.doubanio.com/view/subject/l/public/s28891775.jpg" alt="Python编程 : 从入门到实践" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/26829016/" data-moreurl="onclick=&quot;moreurl(this,{i:'0',query:'python',subject_id:'26829016',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python编程 : 从入门到实践</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">9.1</span><span class="pl">(2417人评价)</span></div><div class="meta abstract">[美] 埃里克·马瑟斯 / 袁国忠 / 人民邮电出版社 / 2016-7-1 / 89.00元</div><div class="meta abstract_2"></div><p class="_ad8vfotrq sc-ifAKCX jVmQgr"><span class="gact sc-EHOje bDInVf"><a href="https://read.douban.com/ebook/122163837/?dcs=search-buylink&amp;dcm=douban&amp;dct=26829016" target="_blank" data-color="#973F31">豆瓣阅读电子版</a></span></p></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/30293801/" data-moreurl="onclick=&quot;moreurl(this,{i:'1',query:'python',subject_id:'30293801',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img1.doubanio.com/view/subject/l/public/s29839337.jpg" alt="Python深度学习" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/30293801/" data-moreurl="onclick=&quot;moreurl(this,{i:'1',query:'python',subject_id:'30293801',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python深度学习</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar50 rating-stars"></span><span class="rating_nums">9.6</span><span class="pl">(453人评价)</span></div><div class="meta abstract">[美] 弗朗索瓦•肖莱 / 张亮 / 人民邮电出版社 / 2018-8 / 119.00元</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/25779298/" data-moreurl="onclick=&quot;moreurl(this,{i:'2',query:'python',subject_id:'25779298',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img3.doubanio.com/view/subject/l/public/s27275372.jpg" alt="利用Python进行数据分析" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/25779298/" data-moreurl="onclick=&quot;moreurl(this,{i:'2',query:'python',subject_id:'25779298',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">利用Python进行数据分析</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">8.5</span><span class="pl">(1205人评价)</span></div><div class="meta abstract">Wes McKinney / 唐学韬 / 机械工业出版社 / 2013-11-18 / 89.00</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/26836700/" data-moreurl="onclick=&quot;moreurl(this,{i:'3',query:'python',subject_id:'26836700',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img1.doubanio.com/view/subject/l/public/s28895767.jpg" alt="Python编程快速上手 : 让繁琐工作自动化" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/26836700/" data-moreurl="onclick=&quot;moreurl(this,{i:'3',query:'python',subject_id:'26836700',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python编程快速上手 : 让繁琐工作自动化</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">9.0</span><span class="pl">(630人评价)</span></div><div class="meta abstract">Albert Sweigart / 王海鹏 / 人民邮电出版社/异步图书 / 2016-7-1 / 69.00元</div><div class="meta abstract_2"></div><p class="_ad8vfotrq sc-ifAKCX jVmQgr"><span class="gact sc-EHOje bDInVf"><a href="https://book.douban.com/subject/26836700/?channel=subject_list&amp;platform=web" target="_blank" data-color="#CF5B40">豆瓣书店有售</a></span></p></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/26709315/" data-moreurl="onclick=&quot;moreurl(this,{i:'4',query:'python',subject_id:'26709315',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img3.doubanio.com/view/subject/l/public/s28384052.jpg" alt="Effective Python : 编写高质量Python代码的59个有效方法" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/26709315/" data-moreurl="onclick=&quot;moreurl(this,{i:'4',query:'python',subject_id:'26709315',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Effective Python : 编写高质量Python代码的59个有效方法</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">9.0</span><span class="pl">(223人评价)</span></div><div class="meta abstract">布雷特·斯拉特金（Brett Slatkin） / 爱飞翔 / 机械工业出版社 / 2016-1 / 59</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/4866934/" data-moreurl="onclick=&quot;moreurl(this,{i:'5',query:'python',subject_id:'4866934',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img3.doubanio.com/view/subject/l/public/s4387251.jpg" alt="Python基础教程（第2版）" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/4866934/" data-moreurl="onclick=&quot;moreurl(this,{i:'5',query:'python',subject_id:'4866934',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python基础教程（第2版）</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar40 rating-stars"></span><span class="rating_nums">8.0</span><span class="pl">(1766人评价)</span></div><div class="meta abstract">Magnus Lie Hetland / 司维 / 曾军崴 / 谭颖华 / 人民邮电出版社 / 2010-7 / 69.00元</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/27028517/" data-moreurl="onclick=&quot;moreurl(this,{i:'6',query:'python',subject_id:'27028517',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img9.doubanio.com/view/subject/l/public/s29434304.jpg" alt="流畅的Python" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/27028517/" data-moreurl="onclick=&quot;moreurl(this,{i:'6',query:'python',subject_id:'27028517',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">流畅的Python</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">9.4</span><span class="pl">(604人评价)</span></div><div class="meta abstract">[巴西] Luciano Ramalho / 安道 / 吴珂 / 人民邮电出版社 / 2017-5-15 / 139元</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/4828875/" data-moreurl="onclick=&quot;moreurl(this,{i:'7',query:'python',subject_id:'4828875',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img3.doubanio.com/view/subject/l/public/s4357883.jpg" alt="Python Cookbook : （第2版）中文版" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/4828875/" data-moreurl="onclick=&quot;moreurl(this,{i:'7',query:'python',subject_id:'4828875',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python Cookbook : （第2版）中文版</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">8.6</span><span class="pl">(367人评价)</span></div><div class="meta abstract">Alex Martelli / Anna Ravenscroft / David Ascher / 高铁军 / 人民邮电出版社 / 2010-5-1 / 99.00元</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/10561367/" data-moreurl="onclick=&quot;moreurl(this,{i:'8',query:'python',subject_id:'10561367',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img3.doubanio.com/view/subject/l/public/s27262723.jpg" alt="Head First Python（中文版） : Head First Python" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/10561367/" data-moreurl="onclick=&quot;moreurl(this,{i:'8',query:'python',subject_id:'10561367',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Head First Python（中文版） : Head First Python</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar40 rating-stars"></span><span class="rating_nums">7.9</span><span class="pl">(600人评价)</span></div><div class="meta abstract">巴里（Barry.P.） / 林琪 等 / 中国电力出版社 / 2012-3-1 / 68.00元</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/3117898/" data-moreurl="onclick=&quot;moreurl(this,{i:'9',query:'python',subject_id:'3117898',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img3.doubanio.com/view/subject/l/public/s3435132.jpg" alt="Python源码剖析 : 深度探索动态语言核心技术" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/3117898/" data-moreurl="onclick=&quot;moreurl(this,{i:'9',query:'python',subject_id:'3117898',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python源码剖析 : 深度探索动态语言核心技术</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">8.7</span><span class="pl">(762人评价)</span></div><div class="meta abstract">陈儒 / 电子工业出版社 / 2008-6 / 69.80元</div><div class="meta abstract_2"></div><p class="_ad8vfotrq sc-ifAKCX jVmQgr"><span class="gact sc-EHOje bDInVf"><a href="https://read.douban.com/ebook/1499455/?dcs=search-buylink&amp;dcm=douban&amp;dct=3117898" target="_blank" data-color="#973F31">豆瓣阅读电子版</a></span></p></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/3948354/" data-moreurl="onclick=&quot;moreurl(this,{i:'10',query:'python',subject_id:'3948354',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img1.doubanio.com/view/subject/l/public/s3952568.jpg" alt="Python学习手册 : （第3版）" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/3948354/" data-moreurl="onclick=&quot;moreurl(this,{i:'10',query:'python',subject_id:'3948354',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python学习手册 : （第3版）</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar40 rating-stars"></span><span class="rating_nums">8.2</span><span class="pl">(909人评价)</span></div><div class="meta abstract">Mark Lutz / 侯靖 / 机械工业出版社 / 2009-8 / 89.00元</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/6025284/" data-moreurl="onclick=&quot;moreurl(this,{i:'11',query:'python',subject_id:'6025284',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img3.doubanio.com/view/subject/l/public/s4676930.jpg" alt="Python灰帽子 : 黑客与逆向工程师的Python编程之道" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/6025284/" data-moreurl="onclick=&quot;moreurl(this,{i:'11',query:'python',subject_id:'6025284',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python灰帽子 : 黑客与逆向工程师的Python编程之道</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar40 rating-stars"></span><span class="rating_nums">7.5</span><span class="pl">(191人评价)</span></div><div class="meta abstract">[美] Justin Seitz / 丁赟卿 译 / 崔孝晨 审校 / 电子工业出版社 / 2011-3 / 39.00元</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/26264642/" data-moreurl="onclick=&quot;moreurl(this,{i:'12',query:'python',subject_id:'26264642',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img1.doubanio.com/view/subject/l/public/s27836847.jpg" alt="&quot;笨办法&quot;学Python" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/26264642/" data-moreurl="onclick=&quot;moreurl(this,{i:'12',query:'python',subject_id:'26264642',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">"笨办法"学Python</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar40 rating-stars"></span><span class="rating_nums">7.8</span><span class="pl">(628人评价)</span></div><div class="meta abstract">肖 (Zed A.Shaw) / 王巍巍 / 人民邮电出版社 / 2014-11-1 / CNY 49.00</div><div class="meta abstract_2"></div></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/26005639/" data-moreurl="onclick=&quot;moreurl(this,{i:'13',query:'python',subject_id:'26005639',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img1.doubanio.com/view/subject/l/public/s27490779.jpg" alt="父与子的编程之旅 : 与小卡特一起学Python" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/26005639/" data-moreurl="onclick=&quot;moreurl(this,{i:'13',query:'python',subject_id:'26005639',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">父与子的编程之旅 : 与小卡特一起学Python</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar45 rating-stars"></span><span class="rating_nums">8.6</span><span class="pl">(217人评价)</span></div><div class="meta abstract">桑德 (Warren Sande) / 桑德 (Carter Sande) / 苏金国 / 易郑超 / 人民邮电出版社 / 2014-10-1 / CNY 69.00</div><div class="meta abstract_2"></div><p class="_ad8vfotrq sc-ifAKCX jVmQgr"><span class="gact sc-EHOje bDInVf"><a href="https://book.douban.com/subject/26005639/?channel=subject_list&amp;platform=web" target="_blank" data-color="#CF5B40">豆瓣书店有售</a></span><span class="gact sc-EHOje bDInVf"><a href="https://read.douban.com/ebook/8045381/?dcs=search-buylink&amp;dcm=douban&amp;dct=26005639" target="_blank" data-color="#973F31">豆瓣阅读电子版</a></span></p></div></div></div><div class="sc-bZQynM fBlcMw sc-bxivhb eJWSlY"><div class="item-root"><a href="https://book.douban.com/subject/3112503/" data-moreurl="onclick=&quot;moreurl(this,{i:'14',query:'python',subject_id:'3112503',from:'book_subject_search',cat_id:'1001'})&quot;" class="cover-link"><img src="https://img9.doubanio.com/view/subject/l/public/s3140466.jpg" alt="Python核心编程（第二版）" class="cover"></a><div class="detail"><div class="title"><a href="https://book.douban.com/subject/3112503/" data-moreurl="onclick=&quot;moreurl(this,{i:'14',query:'python',subject_id:'3112503',from:'book_subject_search',cat_id:'1001'})&quot;" class="title-text">Python核心编程（第二版）</a></div><div class="rating sc-bwzfXH hxNRHc"><span class="allstar40 rating-stars"></span><span class="rating_nums">7.7</span><span class="pl">(1541人评价)</span></div><div class="meta abstract">[美]Wesley J. Chun（陳仲才） / CPUG / 人民邮电出版社 / 2008-06 / 89.00元</div><div class="meta abstract_2"></div></div></div></div><div class="paginator sc-htoDjs eszZtj"><a class="prev activate">&lt;前页</a><a class="num activate thispage">1</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=15" class="num">2</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=30" class="num">3</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=45" class="num">4</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=60" class="num">5</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=75" class="num">6</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=90" class="num">7</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=105" class="num">8</a><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=120" class="num">9</a><span class="break">...</span><a href="/subject_search?search_text=python&amp;cat=1001&amp;start=15" class="next">后页&gt;</a></div></div><div class="_obf915arx"></div></div><div class="_3j6sfvfrw"><div class="sc-dnqmqq ksdtVX"><div class="title">添加豆瓣没有的图书· · · · · ·</div><div class="link"><a href="https://book.douban.com/new_subject?cat=1001&amp;search_text=python">&gt; 添加书籍 python</a></div><div class="link"><a href="https://book.douban.com/new_subject?cat=1009&amp;search_text=python">&gt; 添加杂志 python</a></div><div class="link"><a href="https://book.douban.com/series/add?search_text=python">&gt; 添加丛书 python</a></div></div><div class="sc-dnqmqq ksdtVX"><div class="title">相关搜索· · · · · ·</div><div class="link"><a href="https://movie.douban.com/subject_search?search_text=python&amp;cat=1002">&gt; 搜索"python"的电影</a></div><div class="link"><a href="https://music.douban.com/subject_search?search_text=python&amp;cat=1003">&gt; 搜索"python"的音乐</a></div><div class="link"><a href="https://www.douban.com/location/drama/search?q=python">&gt; 搜索"python"的 舞台剧</a></div></div><div id="dale_book_subject_search_top_right" ad-status="loaded" data-sell-type="RTB" data-type="YoudaoRender" data-version="3.2.19"></div><div class="_e6cokbgrz sc-iwsKbI eSyqVy"><a href="javascript:;" class="link">&gt; 对搜索不满意？给我们反馈</a><iframe class="sc-gZMcBi dkpfYo" src="https://help.douban.com/feedback_popup?link=https%3A%2F%2Fbook.douban.com%2Fsubject_search%3Fsearch_text%3Dpython%26cat%3D1001%26start%3D%25s0&amp;qtype=195&amp;tags=%E8%AF%BB%E4%B9%A6" allowtransparency="true" style="display: none;"></iframe></div><span class="gact"><a href=" https://www.douban.com/opensearch?description">OpenSearch: RSS 2.0</a></span></div></div><div class="_fz7mwrsrt"><div></div></div></div></div>
+  <div id="browser-support"></div>
+
+      
+  <div id="footer">
+    
+<span id="icp" class="fleft gray-link">
+    © 2005－2020 douban.com, all rights reserved 北京豆网科技有限公司
+</span>
+
+<a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
+
+<span class="fright">
+    <a href="https://www.douban.com/about">关于豆瓣</a>
+    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="https://www.douban.com/about/legal">法律声明</a>
+    
+    · <a href="https://help.douban.com/?app=main" target="_blank">帮助中心</a>
+    · <a href="https://www.douban.com/doubanapp/">移动应用</a>
+    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+  </div>
+
+    </div>
+    <script src="https://img3.doubanio.com/f/shire/5ecaf46d6954d5a30bc7d99be86ae34031646e00/js/douban.js" charset="utf-8"></script>
+    
+  <script type="text/javascript">
+    window.__DATA__ = "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";
+      window.__USER__ = { }
+
+  </script>
+  <script src="//img3.doubanio.com/dae/staticng/s/search/2dc13eac880d144d0a1e7767d6b41f018cc80c97/dist/vendor.js" charset="utf-8"></script>
+  <script src="//img3.doubanio.com/dae/staticng/s/search/2dc13eac880d144d0a1e7767d6b41f018cc80c97/dist/bundle.js" charset="utf-8"></script>
+  
+<link rel="stylesheet" href="https://img9.doubanio.com/dae/cdnlib/libs/browser-support/1.0.0/browser-support.css ">
+<script src="https://img9.doubanio.com/dae/cdnlib/libs/browser-support/1.0.0/browser-support.js?v=1" charset="utf-8"></script>
+
+  
+
+
+    
+  
+
+
+
+
+    
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = '//erebor.douban.com/',
+            userId = '',
+            browserId = 'zDOaB4UJZG4',
+            criteria = '8:python|3:/book/subject_search?search_text=python&amp;cat=1001&amp;start=%s0',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_book_subject_search_top_right'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', '//img1.doubanio.com/eDRjYjNvdi9mL2FkanMvZTQ2YTNkMjgwYjBiMzc2OWE4YTI3MWFhMzI0NTQwMTBlMWY3OTYzMy9hZC5yZWxlYXNlLmpz');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+
+
+
+
+
+
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5WP579" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5WP579');</script>
+<!-- End Google Tag Manager -->
+
+
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var p=(('https:' == document.location.protocol) ? 'https' : 'http'), u=p+'://fundin.douban.com/';
+    _paq.push(['setTrackerUrl', u+'piwik']);
+    _paq.push(['setSiteId', '100001']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=p+'://img3.doubanio.com/dae/fundin/piwik.js';
+    s.parentNode.insertBefore(g,s);
+})();
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_setCampNameKey', 'dcn']);
+_gaq.push(['_setCampSourceKey', 'dcs']);
+_gaq.push(['_setCampMediumKey', 'dcm']);
+_gaq.push(['_setCampTermKey', 'dct']);
+_gaq.push(['_setCampContentKey', 'dcc']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_setDomainName', '.douban.com']);
+
+
+    _gaq.push(['_setCustomVar', 1, 'responsive_view_mode', 'desktop', 3]);
+
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+
+window._ga_init = function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+};
+if (window.addEventListener) {
+    window.addEventListener('load', _ga_init, false);
+} else {
+    window.attachEvent('onload', _ga_init);
+}
+</script>
+
+
+
+
+
+
+    <script type="text/javascript">
+    (function() {
+      DetectBrowser({
+        domId: 'browser-support',
+        callback: function(ok) {
+          if (!ok) {
+            var $root = document.getElementById('root')
+            $root && $root.parentElement.removeChild($root)
+          }
+        }
+      })
+    }())
+  </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="search_suggest" style="display: none; top: 78px; left: 174.406px;"><ul></ul></div></body></html>

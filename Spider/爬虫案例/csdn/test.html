@@ -1,0 +1,2847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/qq_40416052/article/details/82426560"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"C++和C相互调用-extern C的使用_C/C++_Civil跨界工程师-CSDN博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>C++和C相互调用-extern C的使用_C/C++_Civil跨界工程师-CSDN博客</title>
+    <meta name="description" content="   一、C++调用C实际工程中C++和C代码相互调用是不可避免的1.C++编译器能够兼容C语言的编C/C++">
+    <script src='//g.csdnimg.cn/tingyun/1.8.3/blog.js' type='text/javascript'></script>
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-3c335cb003.min.css">
+                            <script type="application/ld+json">{"@context":"https:\/\/ziyuan.baidu.com\/contexts\/cambrian.jsonld","@id":"https:\/\/blog.csdn.net\/qq_40416052\/article\/details\/82426560","appid":1638831770136827,"title":"C++\u548cC\u76f8\u4e92\u8c03\u7528-extern \"C\"\u7684\u4f7f\u7528_C\/C++_Civil\u8de8\u754c\u5de5\u7a0b\u5e08-CSDN\u535a\u5ba2","pubDate":"2018-09-05T17:32:39","upDate":"2018-09-05T17:32:39"}</script>
+    
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-c9d2f651cc.min.css">
+    
+<!--    自定义皮肤样式-->
+    
+    <script type="text/javascript">
+        var username = "qq_40416052";
+        var blog_address = "https://blog.csdn.net/qq_40416052";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/qq_40416052/article/details/82426560"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 收藏所需数据
+        var articleTitle = "C++和C相互调用-extern C的使用";
+        var articleDesc = "   一、C++调用C实际工程中C++和C代码相互调用是不可避免的1.C++编译器能够兼容C语言的编C/C++";
+
+        var articleTitles = "C++和C相互调用-extern C的使用_C/C++_Civil跨界工程师-CSDN博客";
+        
+        var nickName = "Civil跨界工程师";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/qq_40416052";
+        var articleDetailUrl = "https://blog.csdn.net/qq_40416052/article/details/82426560";
+        var isShowThird = "1"
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!--js引用-->
+            <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js,report/1.4.2/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="main_father clearfix d-flex justify-content-center" style="height:100%;"> 
+    <div class="container clearfix" id="mainBox">
+        <div  class='space_container'></div>
+        <main>
+            <div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <h1 class="title-article">C++和C相互调用-extern "C"的使用</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                    <!--文章类型-->
+                    <span class="article-type type-1 float-left">原创</span>                                                                                                                                            <a class="follow-nickName" href="https://me.csdn.net/qq_40416052" target="_blank" rel="noopener">Civil跨界工程师</a>
+                    <span class="time">最后发布于2018-09-05 17:32:39                    </span>
+                    <span class="read-count">阅读数 508</span>
+                    <a id='blog_detail_zk_collection' data-report-click='{"mod":"popu_823"}'>
+                        <svg class="icon">
+                            <use xlink:href="#icon-csdnc-Collection-G" ></use>
+                        </svg>
+                        收藏
+                    </a>
+                                    </div>
+                                <div class="up-time">发布于2018-09-05 17:32:39</div>
+                <div class="slide-content-box">
+                                                        <div class="tags-box artic-tag-box">
+                           <span class="label">分类专栏：</span>
+                                                                                             <a class="tag-link" target="_blank" rel="noopener"
+                                      href="https://blog.csdn.net/qq_40416052/category_7971371.html">
+                                       C++                                   </a>
+                                                                                  </div>
+                                                                                                                                                       <div class="article-copyright">
+                        <span class="creativecommons">
+                            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"></a>
+                            <span>
+                                版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。                            </span>
+                            <div class="article-source-link2222">
+                                本文链接：<a href="https://blog.csdn.net/qq_40416052/article/details/82426560">https://blog.csdn.net/qq_40416052/article/details/82426560</a>
+                            </div>
+                        </span> 
+                        </div>
+                                                                                </div>
+                <div class="operating">
+                                                                <a class="href-article-edit slide-toggle">展开</a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <article class="baidu_pl">
+        <!--python安装手册开始-->
+                <!--python安装手册结束-->
+                <!--####专栏广告位图文切换开始-->
+                                    <!--####专栏广告位图文切换结束-->
+         <div id="article_content" class="article_content clearfix">
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-833878f763.css" />
+                            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-833878f763.css" />
+                <div class="htmledit_views" id="content_views">
+                                            <p><strong>   一、C++调用C</strong></p>
+
+<p>实际工程中C++和C代码相互调用是不可避免的</p>
+
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>1.C++编译器能够兼容C语言的编译方式</td>
+		</tr><tr><td>2.C++编译器会优先使用C++编译的方式</td>
+		</tr><tr><td>3.extern关键字能强制让C++编译器进行C方式的编译</td>
+		</tr></tbody></table><p><strong>语法：</strong></p>
+
+<pre class="has">
+<code class="language-cpp">extern "C"
+{
+      //do C-style compilation here
+}</code></pre>
+
+<p><strong>Example:</strong></p>
+
+<p>C语言文件 add.c  ：</p>
+
+<pre class="has">
+<code class="language-cpp">
+#include "add.h"
+
+
+
+int add(int a, int b)
+
+{
+
+    return a + b;
+
+}
+</code></pre>
+
+<p>C++文件  main.h:</p>
+
+<pre class="has">
+<code class="language-cpp">int add(int a, int b);</code></pre>
+
+<p>C++文件  main.cpp:</p>
+
+<pre class="has">
+<code class="language-cpp">#include &lt;stdio.h&gt;
+
+extern  "C"   //头文件中的代码为C代码，所以必须用C方式编译。 
+{
+	#include "add.h"
+}
+
+int add(int a, int b)
+
+{
+	int c = add(1,2);
+	
+	printf("c = %d\n",c);
+
+    return 0;
+
+}
+</code></pre>
+
+<p>   extern "C"在C++中有一个函数名，它有“C”链接（编译器不会mangle 这个函数名），这样client C代码就可以链接到你的函数使用一个“C”兼容的头文件，它只包含你的函数的声明。你的函数定义包含在一个二进制格式（由你的C++编译器编译），client C'链接器将会链接到使用'C'的名称。</p>
+
+<p>    由于C ++有函数名称的重载而C没有，因此C ++编译器不能只使用函数名作为链接的唯一id，因此它通过添加有关参数的信息来mangle 函数名。 AC编译器不需要破坏名称，因为您不能在C中重载函数名。当您声明函数在C ++中具有extern“C”链接时，C ++编译器不会将参数/参数类型信息添加到用于函数名的连接。</p>
+
+<p>    这样你就知道，你可以显式地指定每个单独的声明/定义的“C”链接，或者使用一个block来对声明/定义的序列进行分组，以获得一个特定的链接：</p>
+
+<pre class="has">
+<code class="language-cpp">extern "C" void foo(int);
+extern "C"
+{
+   void g(char);
+   int i;
+}</code></pre>
+
+<p>   如果你比较 关心技术方面的问题，它们列在C++03标准的第7部分中，这里有一个简短的总结（强调extern “C”）：</p>
+
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>1.extern “C”是一个链接规范</td>
+		</tr><tr><td>2.每个编译器都需要提供“C”链接</td>
+		</tr><tr><td>3.链接规范只在名称空间范围内发生</td>
+		</tr><tr><td>4.只有函数名和带有外部链接的变量名具有语言链接</td>
+		</tr><tr><td>5.具有不同语言连接的两个函数类型是不同的类型，即使在其他情况下是相同的</td>
+		</tr><tr><td>6.链接规范nest，内部决定了最终的链接</td>
+		</tr><tr><td>7.对于类成员来说，外部的“C”是被忽略的</td>
+		</tr><tr><td>8.在大多数带有特定名称的函数中，可以有“C”链接（不管名称空间）</td>
+		</tr><tr><td>9.<strong> </strong>'static' inside 'extern "C"'“是有效的;一个被声明的实体有内部链接，因此没有语言链接</td>
+		</tr><tr><td>10.从C++到其他语言中定义的对象，以及从其他语言中定义的对象，都是由实现定义和依赖于语言的。只有当两种语言实现的对象布局策略足够相似时，才可以实现这样的链接</td>
+		</tr></tbody></table><p><strong> 二、如何使C语言代码既能在C编译中通过，又能在C++编译中通过？</strong></p>
+
+<p><strong>语法：</strong></p>
+
+<pre class="has">
+<code class="language-cpp">#ifdef __cplusplus
+extern "C" {
+#endif
+
+// all of your legacy C code here
+
+#ifdef __cplusplus
+}
+#endif</code></pre>
+
+<p>  这样做的目的是让您可以使用C++代码使用C头文件，因为将定义宏“cplusplus”。但是您仍然可以在遗留C代码中使用它，在那里没有定义宏，所以它不会看到唯一的C++结构。</p>
+
+<p><strong>Test:</strong></p>
+
+<pre class="has">
+<code class="language-cpp">#include &lt;stdio.h&gt;
+
+#ifndef __cplusplus //如果没有定义宏
+extern  "C"         //保留extern "C"
+{
+#endif
+
+	#include "add.h"
+
+#ifdef __cplusplus    //如果定义了宏
+}                     //保留括号 }
+#endif     
+
+int add(int a, int b)
+
+{
+	int c = add(1,2);
+	
+	printf("c = %d\n",c);
+
+    return 0;
+
+}
+</code></pre>
+
+<p>&lt;全文完&gt;</p>
+
+<p><strong>参考资料：</strong></p>
+
+<p>1)<a href="https://item.taobao.com/item.htm?spm=a1z10.3-c.w4002-16326486319.21.2620ebfcFFOSQa&amp;id=559166901112" rel="nofollow">唐佐林《C++深度解析教程》</a></p>
+
+<p>2)<a href="https://stackoverflow.com/questions/1041866/what-is-the-effect-of-extern-c-in-c" rel="nofollow">stackoverflow</a></p>                                    </div>
+                                                <div class="more-toolbox">
+                <div class="left-toolbox">
+                    <ul class="toolbox-list">
+                        
+                        <li class="tool-item tool-active is-like "><a href="javascript:;"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#csdnc-thumbsup"></use>
+                        </svg><span class="name">点赞</span>
+                        <span class="count"></span>
+                        </a></li>
+                        <li class="tool-item tool-active is-collection "><a href="javascript:;" data-report-click='{"mod":"popu_824"}'><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-csdnc-Collection-G" ></use>
+                        </svg><span class="name">收藏</span></a></li>
+                        <li class="tool-item tool-active is-share"><a href="javascript:;" data-report-click='{"mod":"1582594662_002"}'><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-csdnc-fenxiang"></use>
+                        </svg>分享</a></li>
+                        <!--打赏开始-->
+                                                <!--打赏结束-->
+                                                <li class="tool-item tool-more">
+                            <a>
+                            <svg t="1575545411852" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5717" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css"></style></defs><path d="M179.176 499.222m-113.245 0a113.245 113.245 0 1 0 226.49 0 113.245 113.245 0 1 0-226.49 0Z" p-id="5718"></path><path d="M509.684 499.222m-113.245 0a113.245 113.245 0 1 0 226.49 0 113.245 113.245 0 1 0-226.49 0Z" p-id="5719"></path><path d="M846.175 499.222m-113.245 0a113.245 113.245 0 1 0 226.49 0 113.245 113.245 0 1 0-226.49 0Z" p-id="5720"></path></svg>
+                            </a>
+                            <ul class="more-box">
+                                <li class="item"><a class="article-report">文章举报</a></li>
+                            </ul>
+                        </li>
+                                            </ul>
+                </div>
+                            </div>
+            <div class="person-messagebox">
+                <div class="left-message"><a href="https://blog.csdn.net/qq_40416052">
+                    <img src="https://profile.csdnimg.cn/B/D/B/3_qq_40416052" class="avatar_pic" username='qq_40416052'>
+                                            <img src="https://g.csdnimg.cn/static/user-reg-year/1x/2.png" class="user-years">
+                                    </a></div>
+                <div class="middle-message">
+                                        <div class="title"><span class="tit"><a href="https://blog.csdn.net/qq_40416052" data-report-click='{"mod":"popu_379"}' target="_blank">Civil跨界工程师</a></span>
+                                            </div>
+                    <div class="text"><span>发布了128 篇原创文章</span> · <span>获赞 113</span> · <span>访问量 16万+</span></div>
+                </div>
+                                <div class="right-message">
+                                            <a href=https://im.csdn.net/im/main.html?userName=qq_40416052 target="_blank" 
+                            class="btn btn-sm btn-red-hollow bt-button personal-letter">私信
+                        </a>
+                                                            <a class="btn btn-sm  bt-button personal-watch" data-report-click='{"mod":"popu_379"}'>关注</a>
+                                    </div>
+                            </div>
+                    </div>
+    </article>
+    
+</div>
+
+
+                        <div class="hide-article-box hide-article-pos text-center">
+                <a class="btn-readmore" data-report-view='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_40416052/article/details/82426560","strategy":"readmore"}' data-report-click='{"mod":"popu_376","dest":"https://blog.csdn.net/qq_40416052/article/details/82426560","strategy":"readmore"}'>
+                    展开阅读全文
+                    <svg class="icon chevrondown" aria-hidden="true">
+                        <use xlink:href="#csdnc-chevrondown"></use>
+                    </svg>
+                </a>
+            </div>
+        
+
+    <script>
+    $("#blog_detail_zk_collection").click(function(){
+        window.csdn.articleCollection()
+    })
+</script>
+
+            <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58"><div style="width:100%;background:#fff;border:3px solid #fff;padding:16px 0px 0px 0px;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=58&a=402&c=0&k=&d=1&t=3&u=fd5a76f5749d4b42b86ed48ddd8a0634"></div></div>            
+            <a id="commentBox" name="commentBox"></a>
+<div class="comment-box">
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank" rel="noopener">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么" maxlength="1000"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="82426560">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-report-click='{"mod":"popu_384","dest":""}'><a href="#" target="_blank" class="comment_area_btn" rel="noopener">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+                                        <span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="button" class="btn btn-sm btn-cancel d-none" value="取消回复">
+					<a data-report-click='{"mod":"1582594662_003"}'><input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论"></a>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+            <div class="recommend-box">
+                                    <div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/MonroeD/article/details/54880944" target="_blank"  rel="noopener" title="C和C++混合编译，extern&quot;C&quot;的用法" data-report-click='{"mod":"popu_387","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/MonroeD\/article\/details\/54880944"}' data-report-view='{"mod":"popu_387","index":"1","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/MonroeD\/article\/details\/54880944"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C和C++混合编译，extern&quot;C&quot;的用法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/MonroeD/article/details/54880944" target="_blank" rel="noopener" title="C和C++混合编译，extern&quot;C&quot;的用法">
+				<span class="desc oneline">第一篇：转载于C和C++混合编译关于extern_C 通常，在C语言的头文件中经常可以看到类似下面这种形式的代码#ifdef  __cplusplus  extern &quot;C&quot; {  #endif  /...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/MonroeD">来自：	<span class="blog_title"> 耗纸的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/lixiaogang_theanswer/article/details/80261864" target="_blank"  rel="noopener" title="C/C++中关键字extern详解" data-report-click='{"mod":"popu_387","index":"2","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/lixiaogang_theanswer\/article\/details\/80261864"}' data-report-view='{"mod":"popu_387","index":"2","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/lixiaogang_theanswer\/article\/details\/80261864"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C/C++中关键字extern详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1834</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lixiaogang_theanswer/article/details/80261864" target="_blank" rel="noopener" title="C/C++中关键字extern详解">
+				<span class="desc oneline">1.extern功能详解C/C++中关键字extern不外乎有下面几个作用，只要记住了这几个规则就可以在项目中运用自如。  ①扩展外部变量的作用域（在同一个文件范围内）  ②将外部变量的作用域扩展到其...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/lixiaogang_theanswer">来自：	<span class="blog_title"> 此处不归牛顿管~</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/lengji22/article/details/89843748" target="_blank"  rel="noopener" title="C/C++分享点：extern 与extern &quot;C&quot;" data-report-click='{"mod":"popu_387","index":"3","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/lengji22\/article\/details\/89843748"}' data-report-view='{"mod":"popu_387","index":"3","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/lengji22\/article\/details\/89843748"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C/C++分享点：extern 与extern &quot;C&quot;		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-05</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					246</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lengji22/article/details/89843748" target="_blank" rel="noopener" title="C/C++分享点：extern 与extern &quot;C&quot;">
+				<span class="desc oneline">C/C++分享点：extern 与extern “C”1.exern 的作用1.1 引用同一个文件中的变量看一段测试代码：#define _CRT_SECURE_NO_WARNING 1#includ...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/lengji22">来自：	<span class="blog_title"> lengji22的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/u014783685/article/details/84973067" target="_blank"  rel="noopener" title="C语言调用C++中的函数，extern &quot;C&quot;的含义" data-report-click='{"mod":"popu_387","index":"4","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/u014783685\/article\/details\/84973067"}' data-report-view='{"mod":"popu_387","index":"4","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/u014783685\/article\/details\/84973067"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C语言调用C++中的函数，extern &quot;C&quot;的含义		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2697</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u014783685/article/details/84973067" target="_blank" rel="noopener" title="C语言调用C++中的函数，extern &quot;C&quot;的含义">
+				<span class="desc oneline">C++编译器在将cpp文件编译成库时，导出的函数名会改变，成员函数会通过加一些元素变成全局函数，如果这时候我们需要用C语言调用C++的函数，就有了一个问题，那就是不知道C++库中导出的函数名，这是由编...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014783685">来自：	<span class="blog_title"> 不休的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_59" data-pid="59"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-gp-e+1c-4d+81"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="2356783728"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=59&a=944&c=0&k=&d=1&t=3&u=cdd8630da6d648a08b0e0e606ca30f56"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_36725931/article/details/85231240" target="_blank"  rel="noopener" title="C 与 C++ 接口函数相互调用" data-report-click='{"mod":"popu_387","index":"5","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_36725931\/article\/details\/85231240"}' data-report-view='{"mod":"popu_387","index":"5","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_36725931\/article\/details\/85231240"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C 与 C++ 接口函数相互调用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					810</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_36725931/article/details/85231240" target="_blank" rel="noopener" title="C 与 C++ 接口函数相互调用">
+				<span class="desc oneline">理解接口调用的关键在于理解函数名称在编译过程改编的原理和 extern &amp;quot;C&amp;quot; 的原理。...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36725931">来自：	<span class="blog_title"> 项脊轩</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/fengbingchun/article/details/78634831" target="_blank"  rel="noopener" title="C++中extern &quot;C&quot;的使用" data-report-click='{"mod":"popu_387","index":"6","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/fengbingchun\/article\/details\/78634831"}' data-report-view='{"mod":"popu_387","index":"6","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/fengbingchun\/article\/details\/78634831"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C++中extern &quot;C&quot;的使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2240</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/fengbingchun/article/details/78634831" target="_blank" rel="noopener" title="C++中extern &quot;C&quot;的使用">
+				<span class="desc oneline">C++中extern &quot;C&quot;的使用</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/fengbingchun">来自：	<span class="blog_title"> 网络资源是无限的</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/joris30/article/details/83273265" target="_blank"  rel="noopener" title="extern &quot;C&quot;的使用方法" data-report-click='{"mod":"popu_387","index":"7","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/joris30\/article\/details\/83273265"}' data-report-view='{"mod":"popu_387","index":"7","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/joris30\/article\/details\/83273265"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				extern &quot;C&quot;的使用方法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					174</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/joris30/article/details/83273265" target="_blank" rel="noopener" title="extern &quot;C&quot;的使用方法">
+				<span class="desc oneline">C语言不支持extern &quot;C&quot;语法，如果我们想写一个头文件，同时支持被C和C++引用，该怎么办？可以使用C++的宏 &quot;__cplusplus&quot;来判断是不是C++编译器。#ifdef __cplusp...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/joris30">来自：	<span class="blog_title"> joris30的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_41192637/article/details/104538589" target="_blank"  rel="noopener" title="【c/c++算法刷题笔记】—— 1.9洛谷闯关" data-report-click='{"mod":"popu_387","index":"8","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_41192637\/article\/details\/104538589"}' data-report-view='{"mod":"popu_387","index":"8","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_41192637\/article\/details\/104538589"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				【c/c++算法刷题笔记】—— 1.9洛谷闯关		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					18</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_41192637/article/details/104538589" target="_blank" rel="noopener" title="【c/c++算法刷题笔记】—— 1.9洛谷闯关">
+				<span class="desc oneline">【前言】今天继续洛谷闯关，感觉小白进化为小灰啦！ 继上次做了一道迷宫题之后，对迷宫题有了执念，这几天可能闯关各种类型的迷宫题哈哈哈哈哈哈哈P1605 迷宫题目背景给定一个N*M方格的迷宫，迷宫里有T处...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41192637">来自：	<span class="blog_title"> la donna romantica</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_34248487/article/details/93268168" target="_blank"  rel="noopener" title="extern &quot;C&quot;与C++中的C函数调用（3）—— 如何在C++中调用C函数" data-report-click='{"mod":"popu_387","index":"9","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_34248487\/article\/details\/93268168"}' data-report-view='{"mod":"popu_387","index":"9","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_34248487\/article\/details\/93268168"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				extern &quot;C&quot;与C++中的C函数调用（3）—— 如何在C++中调用C函数		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					88</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_34248487/article/details/93268168" target="_blank" rel="noopener" title="extern &quot;C&quot;与C++中的C函数调用（3）—— 如何在C++中调用C函数">
+				<span class="desc oneline">在C++中调用C函数要显示用extern “C”声明要调用的C文件中的函数，有如下两种方法：1、直接在C++中使用语句extern “C” f(int x, int y);注意：此时C++文件中不要包...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34248487">来自：	<span class="blog_title"> weixin_34248487的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_60" data-pid="60"><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=60&a=78&c=0&k=&d=1&t=3&u=538a0b18913c41569b2d0b355fec9128"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/chengqiuming/article/details/89737948" target="_blank"  rel="noopener" title="C++中extern &quot;C&quot;块的应用" data-report-click='{"mod":"popu_387","index":"10","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/chengqiuming\/article\/details\/89737948"}' data-report-view='{"mod":"popu_387","index":"10","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/chengqiuming\/article\/details\/89737948"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C++中extern &quot;C&quot;块的应用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					538</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/chengqiuming/article/details/89737948" target="_blank" rel="noopener" title="C++中extern &quot;C&quot;块的应用">
+				<span class="desc oneline">一点睛经常能在C和C++混编代码的程序中看到这样的语句：#ifdef __cplusplus   //plus是+的意思，这里是c++的意思    extern &quot;C&quot;{#endif    ...#i...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/chengqiuming">来自：	<span class="blog_title"> 实践求真知</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_44455588/article/details/104474038" target="_blank"  rel="noopener" title="C++入门到精通——第八章 未归类知识点" data-report-click='{"mod":"popu_387","index":"11","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_44455588\/article\/details\/104474038"}' data-report-view='{"mod":"popu_387","index":"11","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_44455588\/article\/details\/104474038"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C++入门到精通——第八章 未归类知识点		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					49</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_44455588/article/details/104474038" target="_blank" rel="noopener" title="C++入门到精通——第八章 未归类知识点">
+				<span class="desc oneline">八、未归类知识点Author: XFFer~01 函数调用运算符、function类模版1 函数调用运算符2 map类模版3 function类模版函数调用运算符()，如果在类中重载了函数调用运算符(...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44455588">来自：	<span class="blog_title"> XFFer_的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/wlfbitfc/article/details/81737099" target="_blank"  rel="noopener" title="C语言中extern关键字的使用（引用其他文件中的变量或者函数）" data-report-click='{"mod":"popu_387","index":"12","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/wlfbitfc\/article\/details\/81737099"}' data-report-view='{"mod":"popu_387","index":"12","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/wlfbitfc\/article\/details\/81737099"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C语言中extern关键字的使用（引用其他文件中的变量或者函数）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4509</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wlfbitfc/article/details/81737099" target="_blank" rel="noopener" title="C语言中extern关键字的使用（引用其他文件中的变量或者函数）">
+				<span class="desc oneline">C语言中extern关键字的使用（引用其他文件中的变量或者函数）源码地址：码云地址环境：linux,操作系统：Ubuntu16.041.Linux下C程序的编辑，编译和运行以及调试。很多人在学习编程语...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/wlfbitfc">来自：	<span class="blog_title"> Willian F的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/fdsafwagdagadg6576/article/details/46672273" target="_blank"  rel="noopener" title="extern终于搞懂了" data-report-click='{"mod":"popu_387","index":"13","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/fdsafwagdagadg6576\/article\/details\/46672273"}' data-report-view='{"mod":"popu_387","index":"13","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/fdsafwagdagadg6576\/article\/details\/46672273"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				extern终于搞懂了		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3873</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/fdsafwagdagadg6576/article/details/46672273" target="_blank" rel="noopener" title="extern终于搞懂了">
+				<span class="desc oneline">当gcc assert.c b.c 将两个文件一起编译，这样两个文件看成一个工程。这样在b.c中定义的a变成全局变量，在assert.c 中用extern 表示引用全局*.o中global a这个变量...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/fdsafwagdagadg6576">来自：	<span class="blog_title"> fdsafwagdagadg6576的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/WMJ75617718/article/details/24438729" target="_blank"  rel="noopener" title="C和C++接口相互调用 extern &quot;C&quot;" data-report-click='{"mod":"popu_387","index":"14","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/WMJ75617718\/article\/details\/24438729"}' data-report-view='{"mod":"popu_387","index":"14","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/WMJ75617718\/article\/details\/24438729"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C和C++接口相互调用 extern &quot;C&quot;		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					576</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/WMJ75617718/article/details/24438729" target="_blank" rel="noopener" title="C和C++接口相互调用 extern &quot;C&quot;">
+				<span class="desc oneline">extern &quot;C&quot; 只能用在C++文件内， 用于表明 其修饰的函数</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/WMJ75617718">来自：	<span class="blog_title"> hyforthy的旅程</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_61" data-pid="61"><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=61&a=78&c=0&k=&d=1&t=3&u=e79e6a09d5fe40168401795cb88f0e65"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/levinee/article/details/4161184" target="_blank"  rel="noopener" title="C语言中extern修饰符的用法" data-report-click='{"mod":"popu_387","index":"15","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/levinee\/article\/details\/4161184"}' data-report-view='{"mod":"popu_387","index":"15","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/levinee\/article\/details\/4161184"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C语言中extern修饰符的用法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1795</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/levinee/article/details/4161184" target="_blank" rel="noopener" title="C语言中extern修饰符的用法">
+				<span class="desc oneline">今天休假，大概总结一下extern在C/C++语言中的常见用法吧。不是为了说明茴香豆有多种写法，而是发现很多同事，包括我自己，使用的时候还是经常犯晕。 在C语言中，修饰符extern用在变量或者函数的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/levinee">来自：	<span class="blog_title"> levine</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/shangguanyunlan/article/details/53432363" target="_blank"  rel="noopener" title="C/C++ 混合编程 互相调用" data-report-click='{"mod":"popu_387","index":"16","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/shangguanyunlan\/article\/details\/53432363"}' data-report-view='{"mod":"popu_387","index":"16","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/shangguanyunlan\/article\/details\/53432363"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C/C++ 混合编程 互相调用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3057</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/shangguanyunlan/article/details/53432363" target="_blank" rel="noopener" title="C/C++ 混合编程 互相调用">
+				<span class="desc oneline">网上这方面介绍的不少，但是有点鱼龙混杂，对初学者而言，信息量太大，反而不容易直接找到自己想要并且正确的，现将比较好的资料整理下，并附上源代码，供初学者参考以及自己后期使用。两个推荐的原文地址，通俗点的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/shangguanyunlan">来自：	<span class="blog_title"> YunLan天地间</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/XHW___001/article/details/99977893" target="_blank"  rel="noopener" title="c#调用c库" data-report-click='{"mod":"popu_387","index":"17","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/XHW___001\/article\/details\/99977893"}' data-report-view='{"mod":"popu_387","index":"17","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/XHW___001\/article\/details\/99977893"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				c#调用c库		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					464</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/XHW___001/article/details/99977893" target="_blank" rel="noopener" title="c#调用c库">
+				<span class="desc oneline">c# 调用 c库一 概述二 封装1 定义命名空间2 结构体声明3 定义c#类4 在类中声明对应的结构体三 c# 和 c 类型对应四 例子1 c 头文件一 概述C#开发过程中经常会用到C的库， 网上相关...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/XHW___001">来自：	<span class="blog_title"> XHW___001的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/yaoqi_isee/article/details/69947598" target="_blank"  rel="noopener" title="C/C++ 混合编译之extern C的使用" data-report-click='{"mod":"popu_387","index":"18","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/yaoqi_isee\/article\/details\/69947598"}' data-report-view='{"mod":"popu_387","index":"18","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/yaoqi_isee\/article\/details\/69947598"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C/C++ 混合编译之extern C的使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					711</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yaoqi_isee/article/details/69947598" target="_blank" rel="noopener" title="C/C++ 混合编译之extern C的使用">
+				<span class="desc oneline">问题描述最近在用yolo做目标检测的项目。大家都知道，yolo是一个纯C的框架，只能用gcc编译器，用g++编译会报错。在项目中我自己往框架了添加了一部分C++的代码，假设是a.cpp，里面有函数fu...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaoqi_isee">来自：	<span class="blog_title"> yj_isee的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/T146lLa128XX0x/article/details/81713862" target="_blank"  rel="noopener" title="extern&quot;C&quot;的使用" data-report-click='{"mod":"popu_387","index":"19","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/T146lLa128XX0x\/article\/details\/81713862"}' data-report-view='{"mod":"popu_387","index":"19","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/T146lLa128XX0x\/article\/details\/81713862"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				extern&quot;C&quot;的使用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2911</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/T146lLa128XX0x/article/details/81713862" target="_blank" rel="noopener" title="extern&quot;C&quot;的使用">
+				<span class="desc oneline">通常，在C语言的头文件中经常可以看到类似下面这种形式的代码那么，这种写法什么用呢？实际上，这是为了让CPP能够与C接口而采用的一种语法形式。之所以采用这种方式，是因为两种......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/T146lLa128XX0x">来自：	<span class="blog_title"> Linux知识积累</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-recommend-box"><div id="kp_box_62" data-pid="62"><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=62&a=78&c=0&k=&d=1&t=3&u=02eda8eb9782438081408bd37b98e7d8"></div></div>
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/yusiguyuan/article/details/23128943" target="_blank"  rel="noopener" title="C/C++混合编程--extern “C” 使用方法详解" data-report-click='{"mod":"popu_387","index":"20","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/yusiguyuan\/article\/details\/23128943"}' data-report-view='{"mod":"popu_387","index":"20","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/yusiguyuan\/article\/details\/23128943"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C/C++混合编程--extern “C” 使用方法详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2794</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yusiguyuan/article/details/23128943" target="_blank" rel="noopener" title="C/C++混合编程--extern “C” 使用方法详解">
+				<span class="desc oneline">extern &quot;C&quot; 是为了C与C++混合编程而设立的关键字，假如你已经知道了关于extern &quot;C&quot; 的一些使用方法，想很快掌握使用策略，下面从两个角度说明：1）在C++程序中调用C程序，比如在CP...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/yusiguyuan">来自：	<span class="blog_title"> 鱼思故渊的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/njuptACMcxk/article/details/104548392" target="_blank"  rel="noopener" title="图论(环)-蓝桥杯省赛C++B组-交换瓶子" data-report-click='{"mod":"popu_387","index":"21","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/njuptACMcxk\/article\/details\/104548392"}' data-report-view='{"mod":"popu_387","index":"21","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/njuptACMcxk\/article\/details\/104548392"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				图论(环)-蓝桥杯省赛C++B组-交换瓶子		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					24</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/njuptACMcxk/article/details/104548392" target="_blank" rel="noopener" title="图论(环)-蓝桥杯省赛C++B组-交换瓶子">
+				<span class="desc oneline">图论(环)-蓝桥杯省赛C++B组-交换瓶子题目：有 N 个瓶子，编号 1∼N，放在架子上。比如有 5 个瓶子：2 1 3 5 4要求每次拿起 2 个瓶子，交换它们的位置。经过若干次后，使得瓶子的序号为...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/njuptACMcxk">来自：	<span class="blog_title"> njuptACMcxk的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/IT_Quanwudi/article/details/84540900" target="_blank"  rel="noopener" title="C和C++接口的相互调用" data-report-click='{"mod":"popu_387","index":"22","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/IT_Quanwudi\/article\/details\/84540900"}' data-report-view='{"mod":"popu_387","index":"22","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/IT_Quanwudi\/article\/details\/84540900"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C和C++接口的相互调用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					365</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/IT_Quanwudi/article/details/84540900" target="_blank" rel="noopener" title="C和C++接口的相互调用">
+				<span class="desc oneline">C和C++接口的相互调用我们为什么要学习C和C++接口的相互调用？答：在工作中，我们经常要使用C和C++混合编程，那么，在调用对方接口时，总是不可避免地出现问题。为了让双方和谐地工作，我们就得用到ex...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/IT_Quanwudi">来自：	<span class="blog_title"> IT_Quanwudi的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/hxg130435477/article/details/6632954" target="_blank"  rel="noopener" title="extern “C”的原理，用法和使用场景" data-report-click='{"mod":"popu_387","index":"23","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/hxg130435477\/article\/details\/6632954"}' data-report-view='{"mod":"popu_387","index":"23","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/hxg130435477\/article\/details\/6632954"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				extern “C”的原理，用法和使用场景		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3520</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/hxg130435477/article/details/6632954" target="_blank" rel="noopener" title="extern “C”的原理，用法和使用场景">
+				<span class="desc oneline">extern “C”的用法和使用场景                                      --- 称呼：Amos  email:huangxuangui@sina.com 目录1...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/hxg130435477">来自：	<span class="blog_title"> RaymondAmos的技术专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/playingguitar/article/details/1066127" target="_blank"  rel="noopener" title="C++ 中 extern &quot;C&quot; 用法小结" data-report-click='{"mod":"popu_387","index":"24","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/playingguitar\/article\/details\/1066127"}' data-report-view='{"mod":"popu_387","index":"24","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/playingguitar\/article\/details\/1066127"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C++ 中 extern &quot;C&quot; 用法小结		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6720</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/playingguitar/article/details/1066127" target="_blank" rel="noopener" title="C++ 中 extern &quot;C&quot; 用法小结">
+				<span class="desc oneline">         昨天晚上翻《C++ Primer》偶尔看见介绍 extern &quot;C&quot; 的那一节，看着看着竟然有点糊涂了，觉得书上说的好像有点不对。记得以前也曾经看过这一节，也看过几篇介绍这个的文章，...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/playingguitar">来自：	<span class="blog_title"> playingguitar的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/jiaxiaokai/article/details/51034422" target="_blank"  rel="noopener" title="extern用法：C文件和C++文件之间的函数互调" data-report-click='{"mod":"popu_387","index":"25","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/jiaxiaokai\/article\/details\/51034422"}' data-report-view='{"mod":"popu_387","index":"25","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/jiaxiaokai\/article\/details\/51034422"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				extern用法：C文件和C++文件之间的函数互调		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					180</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/jiaxiaokai/article/details/51034422" target="_blank" rel="noopener" title="extern用法：C文件和C++文件之间的函数互调">
+				<span class="desc oneline">首先，作为extern是C/C++语言中表明函数和全局变量作用范围（可见性）的关键字，该关键字告诉编译器，其声明的函数和变量可以在本模块或其它模块中使用。       通常，在模块的头文件中对本模块提...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/jiaxiaokai">来自：	<span class="blog_title"> jiaxiaokai的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/Dthinking/article/details/86250798" target="_blank"  rel="noopener" title="c和c++(c whith class)的相互调用&amp;引用" data-report-click='{"mod":"popu_387","index":"26","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/Dthinking\/article\/details\/86250798"}' data-report-view='{"mod":"popu_387","index":"26","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/Dthinking\/article\/details\/86250798"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				c和c++(c whith class)的相互调用&amp;引用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					186</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/Dthinking/article/details/86250798" target="_blank" rel="noopener" title="c和c++(c whith class)的相互调用&amp;引用">
+				<span class="desc oneline">c和c++生成函数符号规则不同c++调用c   .cpp加extern&quot;c&quot; extern&quot;c&quot;下包含的是以c语言的规则来处理的extern&quot;c&quot;//extern&quot;c&quot;下包含的代码是以c语言的规则来处...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/Dthinking">来自：	<span class="blog_title"> Dthinking的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_39507748/article/details/104539673" target="_blank"  rel="noopener" title="opencv使用cv2.morphologyEx()实现开运算，闭运算，礼帽与黑帽操作以及梯度运算" data-report-click='{"mod":"popu_387","index":"27","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_39507748\/article\/details\/104539673"}' data-report-view='{"mod":"popu_387","index":"27","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_39507748\/article\/details\/104539673"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				opencv使用cv2.morphologyEx()实现开运算，闭运算，礼帽与黑帽操作以及梯度运算		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					20</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_39507748/article/details/104539673" target="_blank" rel="noopener" title="opencv使用cv2.morphologyEx()实现开运算，闭运算，礼帽与黑帽操作以及梯度运算">
+				<span class="desc oneline">openvc中morphologyEx()函数是一种形态学变化函数。数学形态学可以理解为一种滤波行为，因此也称为形态学滤波。滤波中用到的滤波器(kernal)，在形态学中称为结构元素。结构元素往往是由...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39507748">来自：	<span class="blog_title"> qq_39507748的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_40416052/article/details/82260681" target="_blank"  rel="noopener" title="【C++】内联函数分析" data-report-click='{"mod":"popu_387","index":"28","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_40416052\/article\/details\/82260681"}' data-report-view='{"mod":"popu_387","index":"28","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_40416052\/article\/details\/82260681"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				【C++】内联函数分析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1755</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_40416052/article/details/82260681" target="_blank" rel="noopener" title="【C++】内联函数分析">
+				<span class="desc oneline">一、为什么要使用内联函数：  当程序执行函数调用指令时，CPU存储函数调用之后的指令的存储器地址，复制函数的参数在堆栈上，最后将控制转移到指定的函数。然后，CPU执行功能代码，将功能返回值存储在预定义...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40416052">来自：	<span class="blog_title"> Civil跨界工程师</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/duxinshuxiaobian/article/details/103254180" target="_blank"  rel="noopener" title="活到老，学到老，程序员也该如此" data-report-click='{"mod":"popu_387","index":"29","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/duxinshuxiaobian\/article\/details\/103254180"}' data-report-view='{"mod":"popu_387","index":"29","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/duxinshuxiaobian\/article\/details\/103254180"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				活到老，学到老，程序员也该如此		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/duxinshuxiaobian/article/details/103254180" target="_blank" rel="noopener" title="活到老，学到老，程序员也该如此">
+				<span class="desc oneline">全文共2763字，预计学习时长8分钟图片来源：Pixabay此前，“网传阿里巴巴要求尽快实现P8全员35周岁以内”的消息闹得沸沸扬扬。虽然很快被阿里辟谣，但苍蝇不叮无缝的蛋，无蜜不招彩蝶蜂。消息从何而...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/duxinshuxiaobian">来自：	<span class="blog_title"> 读芯术的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/shipfei_csdn/article/details/103225517" target="_blank"  rel="noopener" title="性能指标：QPS、TPS、系统吞吐量理解" data-report-click='{"mod":"popu_387","index":"30","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/shipfei_csdn\/article\/details\/103225517"}' data-report-view='{"mod":"popu_387","index":"30","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/shipfei_csdn\/article\/details\/103225517"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				性能指标：QPS、TPS、系统吞吐量理解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2164</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/shipfei_csdn/article/details/103225517" target="_blank" rel="noopener" title="性能指标：QPS、TPS、系统吞吐量理解">
+				<span class="desc oneline">一、QPS，每秒查询QPS：Queries Per Second意思是“每秒查询率”，是一台服务器每秒能够相应的查询次数，是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准。互联网中，作为域...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/shipfei_csdn">来自：	<span class="blog_title"> 技术大咖秀的博客专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/enmotech/article/details/100144825" target="_blank"  rel="noopener" title="一文告诉你全世界最顶级的开发者都在使用什么数据库" data-report-click='{"mod":"popu_387","index":"31","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/enmotech\/article\/details\/100144825"}' data-report-view='{"mod":"popu_387","index":"31","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/enmotech\/article\/details\/100144825"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				一文告诉你全世界最顶级的开发者都在使用什么数据库		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1860</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/enmotech/article/details/100144825" target="_blank" rel="noopener" title="一文告诉你全世界最顶级的开发者都在使用什么数据库">
+				<span class="desc oneline">作为一名IT行业从业者，其实从去年已经隐隐约约感觉到数据库的有变化，只是没有想到变得这么快。今年的一些事情实实在在地给了某些数据库重击，如果以前去某数据库还是喊喊，然后该......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/enmotech">来自：	<span class="blog_title"> Enmotech的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_34344403/article/details/91378892" target="_blank"  rel="noopener" title="关于三次握手与四次挥手面试官想考我们什么？--- 不看后悔系列" data-report-click='{"mod":"popu_387","index":"32","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_34344403\/article\/details\/91378892"}' data-report-view='{"mod":"popu_387","index":"32","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/weixin_34344403\/article\/details\/91378892"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				关于三次握手与四次挥手面试官想考我们什么？--- 不看后悔系列		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1690</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_34344403/article/details/91378892" target="_blank" rel="noopener" title="关于三次握手与四次挥手面试官想考我们什么？--- 不看后悔系列">
+				<span class="desc oneline">在面试中，三次握手和四次挥手可以说是问的最频繁的一个知识点了，我相信大家也都看过很多关于三次握手与四次挥手的文章，今天的这篇文章，重点是围绕着面试，我们应该掌握哪些比较重要的点，哪些是比较被面试官给问...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34344403">来自：	<span class="blog_title"> weixin_34344403的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_38456809/article/details/102942561" target="_blank"  rel="noopener" title="dp" data-report-click='{"mod":"popu_387","index":"33","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_38456809\/article\/details\/102942561"}' data-report-view='{"mod":"popu_387","index":"33","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_38456809\/article\/details\/102942561"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				dp		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_38456809/article/details/102942561" target="_blank" rel="noopener" title="dp">
+				<span class="desc oneline">2.1斐波那契系列问题2.2矩阵系列问题2.3跳跃系列问题3.1 01背包3.2 完全背包3.3多重背包3.4 一些变形选讲2.1斐波那契系列问题在数学上，斐波纳契数列以如下被以递归的方法定义：F(0...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/shaosunrise/article/details/81176880" target="_blank"  rel="noopener" title="C调用C++库和C++调用C库的方法" data-report-click='{"mod":"popu_387","index":"34","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/shaosunrise\/article\/details\/81176880"}' data-report-view='{"mod":"popu_387","index":"34","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/shaosunrise\/article\/details\/81176880"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C调用C++库和C++调用C库的方法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/shaosunrise/article/details/81176880" target="_blank" rel="noopener" title="C调用C++库和C++调用C库的方法">
+				<span class="desc oneline">C++调用C的静态库/动态库C++调用C的函数比较简单，直接使用extern&amp;quot;C&amp;quot;{}告诉编译器用C的规则去调用C函数就可以了。CAdd.hintcadd(intx...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/shaosunrise">来自：	<span class="blog_title"> 彼此当年少，莫负好时光</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/greatwgb/article/details/8845271" target="_blank"  rel="noopener" title="头文件中定义和声明的问题" data-report-click='{"mod":"popu_387","index":"35","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/greatwgb\/article\/details\/8845271"}' data-report-view='{"mod":"popu_387","index":"35","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/greatwgb\/article\/details\/8845271"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				头文件中定义和声明的问题		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					701</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/greatwgb/article/details/8845271" target="_blank" rel="noopener" title="头文件中定义和声明的问题">
+				<span class="desc oneline">头文件中定义和声明的问题1.头文件中不可以放变量的定义！一般头文件中只是放变量的声明，因为头文件要被其他文件包含#include，如果把定义放在头文件的话，就不能避免多次定义变量。C++不允许多次定义...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/greatwgb">来自：	<span class="blog_title"> 王国豹的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37609579/article/details/102961765" target="_blank"  rel="noopener" title="为啥国人偏爱Mybatis，而老外喜欢Hibernate/JPA呢？" data-report-click='{"mod":"popu_387","index":"36","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/m0_37609579\/article\/details\/102961765"}' data-report-view='{"mod":"popu_387","index":"36","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/m0_37609579\/article\/details\/102961765"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				为啥国人偏爱Mybatis，而老外喜欢Hibernate/JPA呢？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37609579/article/details/102961765" target="_blank" rel="noopener" title="为啥国人偏爱Mybatis，而老外喜欢Hibernate/JPA呢？">
+				<span class="desc oneline">关于SQL和ORM的争论，永远都不会终止，我也一直在思考这个问题。昨天又跟群里的小伙伴进行了一番讨论，感触还是有一些，于是就有了今天这篇文。声明：本文不会下关于Mybatis和JPA两个持久层框架哪个...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37609579">来自：	<span class="blog_title"> 十步杀一人-千里不留行</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_35190492/article/details/103246772" target="_blank"  rel="noopener" title="大学四年自学走来，这些私藏的实用工具/学习网站我贡献出来了" data-report-click='{"mod":"popu_387","index":"37","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_35190492\/article\/details\/103246772"}' data-report-view='{"mod":"popu_387","index":"37","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qq_35190492\/article\/details\/103246772"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				大学四年自学走来，这些私藏的实用工具/学习网站我贡献出来了		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_35190492/article/details/103246772" target="_blank" rel="noopener" title="大学四年自学走来，这些私藏的实用工具/学习网站我贡献出来了">
+				<span class="desc oneline">知乎高赞：文中列举了互联网一线大厂程序员都在用的工具集合，涉及面非常广，小白和老手都可以进来看看，或许有新收获。...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35190492">来自：	<span class="blog_title"> 敖丙</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/qinyuanpei/article/details/103260622" target="_blank"  rel="noopener" title="Vue快速实现通用表单验证" data-report-click='{"mod":"popu_387","index":"38","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qinyuanpei\/article\/details\/103260622"}' data-report-view='{"mod":"popu_387","index":"38","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/qinyuanpei\/article\/details\/103260622"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				Vue快速实现通用表单验证		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6732</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qinyuanpei/article/details/103260622" target="_blank" rel="noopener" title="Vue快速实现通用表单验证">
+				<span class="desc oneline">本文开篇第一句话，想引用鲁迅先生《祝福》里的一句话，那便是：“我真傻，真的，我单单知道后端整天都是CRUD，我没想到前端整天都是Form表单”。这句话要从哪里说起呢？大概要从最近半个月的“全栈工程师”...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/qinyuanpei">来自：	<span class="blog_title"> 七喜先生の猫</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/zhonghua18517/article/details/27970079" target="_blank"  rel="noopener" title="extern C(C++与C实现相互函数的调用)" data-report-click='{"mod":"popu_387","index":"39","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/zhonghua18517\/article\/details\/27970079"}' data-report-view='{"mod":"popu_387","index":"39","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/zhonghua18517\/article\/details\/27970079"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				extern C(C++与C实现相互函数的调用)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1560</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/zhonghua18517/article/details/27970079" target="_blank" rel="noopener" title="extern C(C++与C实现相互函数的调用)">
+				<span class="desc oneline">(1) C++中调用C的函数</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhonghua18517">来自：	<span class="blog_title"> zhonghua18517的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix">
+	<div class="content">
+		<a href="https://blog.csdn.net/u011228842/article/details/100833757" target="_blank"  rel="noopener" title="C和C++接口相互调用" data-report-click='{"mod":"popu_387","index":"40","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/u011228842\/article\/details\/100833757"}' data-report-view='{"mod":"popu_387","index":"40","strategy":"BlogCommendFromMachineLearnPai2","dest":"https:\/\/blog.csdn.net\/u011228842\/article\/details\/100833757"}' data-report-query='depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task' >
+		<h4 class="text-truncate oneline">
+				C和C++接口相互调用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-14</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					38</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011228842/article/details/100833757" target="_blank" rel="noopener" title="C和C++接口相互调用">
+				<span class="desc oneline">在真实项目的开发过程中，可能会出现需要C和C++混合编程的情况，因此会不可避免地遇到C和C++接口相互调用的问题。然而，一个项目的编码开发需要经过预处理、编译、链接这几个阶段，通常，编译器会将.c或....</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011228842">来自：	<span class="blog_title"> 要回杭州的李同学</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+                    <div class="recommend-item-box type_hot_word">
+                    <div class="content clearfix">
+                        <div class="float-left">
+                                                                                <span>
+                                <a href="https://blog.csdn.net/yilovexing/article/details/80577510" target="_blank">
+                                python</a>
+                            </span>
+                                                        <span>
+                                <a href="https://blog.csdn.net/slwbcsdn/article/details/53458352" target="_blank">
+                                json</a>
+                            </span>
+                                                        <span>
+                                <a href="https://blog.csdn.net/csdnnews/article/details/83753246" target="_blank">
+                                java</a>
+                            </span>
+                                                        <span>
+                                <a href="https://blog.csdn.net/qq_35077512/article/details/88952519" target="_blank">
+                                mysql</a>
+                            </span>
+                                                        <span>
+                                <a href="https://blog.csdn.net/pdcfighting/article/details/80297499" target="_blank">
+                                pycharm</a>
+                            </span>
+                                                        <span>
+                                <a href="https://blog.csdn.net/sinyu890807/article/details/97142065" target="_blank">
+                                android</a>
+                            </span>
+                                                        <span>
+                                <a href="https://blog.csdn.net/gexiaoyizhimei/article/details/100122368" target="_blank">
+                                linux</a>
+                            </span>
+                                                        <span>
+                                <a href="https://download.csdn.net/download/xhg_gszs/10978826" target="_blank">
+                                json格式</a>
+                            </span>
+                                                    
+                                                                                <span>
+                                <a href="https://www.csdn.net/gather_10/NtTaUgwsLWRvd25sb2Fk.html" target="_blank">
+                                c#下拉列表获取串口</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_17/NtTaUgxsLWRvd25sb2Fk.html" target="_blank">
+                                c# 如何防止参数被修改</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_19/NtTaUgysLWRvd25sb2Fk.html" target="_blank">
+                                c#开发微信公众号例子</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_2f/NtTaUgzsLWJsb2cO0O0O.html" target="_blank">
+                                c# null</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_15/NtTaUg0sLWRvd25sb2Fk.html" target="_blank">
+                                c#支付宝当面付</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_11/NtTaUg2sLWRvd25sb2Fk.html" target="_blank">
+                                c# 判断合法路劲</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_16/NtTaUg3sLWRvd25sb2Fk.html" target="_blank">
+                                c# 发送带图片的邮件</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_11/NtTaUg4sLWRvd25sb2Fk.html" target="_blank">
+                                c# 窗体中的线段</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_13/NtTaUg5sLWRvd25sb2Fk.html" target="_blank">
+                                c# 并发 集合</a>
+                            </span>
+                                                        <span>
+                                <a href="https://www.csdn.net/gather_1a/NtTaYgwsLWRvd25sb2Fk.html" target="_blank">
+                                c# 定义手势</a>
+                            </span>
+                                                                            </div>
+                    </div>
+                    </div>
+                                    <div class="recommend-loading-box">
+                    <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+                </div>
+                <div class="recommend-end-box">
+                    <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+                </div>
+            </div>
+                            <div class="template-box">
+                    <span>©️2019 CSDN</span><span class="point"></span>
+                <span>皮肤主题: 大白</span>
+                <span> 设计师:
+                                            CSDN官方博客                                    </span>
+                </div>
+                    </main>
+        <aside class="blog_container_aside">
+	<!--主页引入-->
+
+    <div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/qq_40416052"  data-report-click='{"mod":"popu_379","dest":"https://blog.csdn.net/qq_40416052"}'>
+                <img src="https://profile.csdnimg.cn/B/D/B/3_qq_40416052" class="avatar_pic" username='qq_40416052'>
+                                    <img src="https://g.csdnimg.cn/static/user-reg-year/1x/2.png" class="user-years">
+                            </a>
+                    </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div>
+                                <span class="name csdn-tracking-statistics tracking-click "  style="display:block" data-report-click='{"mod":"popu_379","dest":"https://blog.csdn.net/qq_40416052"}' username='qq_40416052'>
+                    <a href="https://blog.csdn.net/qq_40416052" class="" id="uid" title='Civil跨界工程师'>
+                    Civil跨界工程师                    </a>
+                </span>
+            </div>
+            <div class="profile-intro-name-boxFooter">
+                                                <span class="personal-home-page" style='right:-96px;'><a target="_blank" href="https://me.csdn.net/qq_40416052">TA的个人主页 ></a></span>
+                            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="128">
+                            <dt><a href="https://blog.csdn.net/qq_40416052" data-report-query="t=1">原创</a></dt>
+                <dd><a href="https://blog.csdn.net/qq_40416052" data-report-query="t=1"><span class="count">128</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="147">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">147</span></dd>
+        </dl>
+        <dl class="text-center" title="113">
+            <dt>获赞</dt>
+            <dd><span class="count">113</span></dd>
+        </dl>
+        <dl class="text-center" title="53">
+            <dt>评论</dt>
+            <dd><span class="count">53</span></dd>
+        </dl>
+        <dl class="text-center" title="160282">
+            <dt>访问</dt>
+            <dd><span class="count">16万+</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl class="aside-box-footerClassify">
+            <dt>等级:</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="5级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-5"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl title="4959">
+            <dt>周排名:</dt>
+            <dd>
+                <a class="grade-box-rankA" href="https://blog.csdn.net/rank/writing_rank" target="_blank">
+                    4959                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>积分:</dt>
+            <dd title="2144">
+                2144            </dd>
+        </dl>
+        <dl title="30722">
+            <dt>总排名:</dt>
+            <dd>
+                <a class="grade-box-rankA" href="https://blog.csdn.net/rank/writing_rank_total" target="_blank">
+                    3万+                </a>
+            </dd>
+        </dl>
+    </div>
+    <div class="aside-box-footer">
+                    <div class="badge-box d-flex">
+                <div class="profile-medal">勋章:</div>
+                <div class="badge d-flex">
+                                                                                                        <div class="icon-badge" title="GitHub">
+                                    <div class="mouse-box">
+                                        <img src="https://csdnimg.cn/medal/github@120.png" alt="">
+                                        <div class="icon-arrow"></div>
+                                    </div>
+                                    <div class="grade-detail-box">
+                                        <div class="pos-box">
+                                            <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                                <img src="https://csdnimg.cn/medal/github@120.png" alt="">
+                                                <p>GitHub</p>
+                                            </div>
+                                            <div class="right-box">
+                                                绑定GitHub第三方账户获取                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                                <div class="icon-badge" title="持之以恒">
+                                    <div class="mouse-box">
+                                        <img src="https://csdnimg.cn/medal/chizhiyiheng@120.png" alt="">
+                                        <div class="icon-arrow"></div>
+                                    </div>
+                                    <div class="grade-detail-box">
+                                        <div class="pos-box">
+                                            <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                                <img src="https://csdnimg.cn/medal/chizhiyiheng@120.png" alt="">
+                                                <p>持之以恒</p>
+                                            </div>
+                                            <div class="right-box">
+                                                授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                                <div class="icon-badge" title="勤写标兵Lv1">
+                                    <div class="mouse-box">
+                                        <img src="https://csdnimg.cn/medal/qixiebiaobing1@120.png" alt="">
+                                        <div class="icon-arrow"></div>
+                                    </div>
+                                    <div class="grade-detail-box">
+                                        <div class="pos-box">
+                                            <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                                <img src="https://csdnimg.cn/medal/qixiebiaobing1@120.png" alt="">
+                                                <p>勤写标兵Lv1</p>
+                                            </div>
+                                            <div class="right-box">
+                                                授予每个自然周发布1篇到3篇原创IT博文的用户。本勋章将于次周周三上午根据用户上周的博文发布情况由系统自动颁发。                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                        </div>
+                <script>
+                    (function($) {
+                        setTimeout(function() {
+                            $('div.icon-badge.show-moment').removeClass('show-moment');
+                        }, 5000);
+                    })(window.jQuery)
+                </script>
+            </div>
+                
+    </div>
+        <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box">
+                            <a class="personal-watch bt-button" id="btnAttent" data-report-click='{"mod":"popu_379"}'>关注</a>
+                    </div>
+        <div class='opt-letter-watch-box'>
+            <a class="bt-button btn-red-hollow personal-letter" href=https://im.csdn.net/im/main.html?userName=qq_40416052 target="_blank" rel="noopener">私信</a>
+        </div>
+    </div>
+    </div>
+<script>
+    function watchBtnChange(flag, username) {
+        $('span.blog-expert-button-follow').each(function(index) {
+            if (flag) {
+                if ($(this).attr("data-name") == username) {
+                    $(this).html('<span class="hover-hide">已关注</span><span class="hover-show">取消</span>').removeClass('btn-red-follow').addClass('btn-gray-follow attented');
+                }
+            } else {
+                if ($(this).attr("data-name") == username) {
+                    $(this).html("关注").addClass('btn-red-follow').removeClass('btn-gray-follow attented');
+                }
+            }
+        })
+        if (username == $('p.csdn-tracking-statistics').attr("username")) {
+            if (flag) {
+                $('#btnAttent').addClass("attented").text("已关注").removeClass('btn-red-hollow').addClass('btn-gray-hollow');
+                changeFans(1)
+            } else {
+                $('#btnAttent').text("关注").addClass('btn-red-hollow').removeClass('btn-gray-hollow attented');
+                changeFans(-1)
+            }
+        }
+
+    }
+
+    function changeFans(num) {
+        if ($('#fan').text().indexOf('+') < 0) {
+            $('#fan').text(parseInt($('#fan').text()) + num);
+        } else {
+            $('#fanBox').attr('title', parseInt($('#fanBox').attr('title')) + num);
+        }
+    }
+    window.csdn = window.csdn ? window.csdn : {};
+    window.csdn.watchBtnChange = watchBtnChange;
+</script><div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+        <div id="kp_box_56" data-pid="56"><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3032528",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=56&a=76&c=0&k=&d=1&t=3&u=50e079dd48d14ae0a8669b6c339e906d"></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_40416052/article/details/103701756"}' href="https://blog.csdn.net/qq_40416052/article/details/103701756" target="_blank" >
+                                        C++编写的表白小程序(图片围成爱心+烟花+音乐)-附源代码                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_40416052/article/details/103608123"}' href="https://blog.csdn.net/qq_40416052/article/details/103608123" target="_blank" >
+                                        两跨连续梁影响线绘制(二)                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_40416052/article/details/103533817"}' href="https://blog.csdn.net/qq_40416052/article/details/103533817" target="_blank" >
+                                        两跨连续梁影响线绘制(一)                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_40416052/article/details/100070529"}' href="https://blog.csdn.net/qq_40416052/article/details/100070529" target="_blank" >
+                                        MFC-Serialization序列化保存、打开线段和多段线                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/qq_40416052/article/details/82950709"}' href="https://blog.csdn.net/qq_40416052/article/details/82950709" target="_blank" >
+                                        第九周ARTS                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+    <div id="asideCategory" class="aside-box flexible-box"
+         style="">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content">
+        <ul>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9592139.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9592139.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_9592139.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140213434.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">桥梁建筑结构设计程序开发</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">2篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7763163.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7763163.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_7763163.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151124774.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">ObjectARX二次开发</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">33篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7944426.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7944426.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_7944426.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918135101160.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">每周完成一个ARTS</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">15篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7946878.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7946878.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_7946878.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140158853.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">算法与数据结构</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">3篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7959221.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7959221.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_7959221.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140129601.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">MFC</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">5篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7960585.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7960585.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_7960585.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151117521.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">LeetCode</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">19篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7971371.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7971371.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_7971371.html">
+                                                    <img src="https://img-blog.csdnimg.cn/2019092715111047.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">C++</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">22篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8064451.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8064451.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_8064451.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151101105.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">计算机组成原理</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">2篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266496.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266496.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_8266496.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140158853.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">深度探索c++对象模型</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">5篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266590.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266590.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_8266590.html">
+                                                    <img src="https://img-blog.csdnimg.cn/2019092715111047.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">C语言进阶剖析</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">4篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8273377.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8273377.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_8273377.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140145169.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">汇编语言</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">2篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8520486.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8520486.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_8520486.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151101105.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">Revit二次开发</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">18篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9015813.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9015813.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_9015813.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151043371.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">ObjectARX视频教程</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">2篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9210877.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9210877.html"}'
+                                               href="https://blog.csdn.net/qq_40416052/category_9210877.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151124774.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">计算几何</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">3篇</span>
+                                            </a>
+                </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/12" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/12"}'>
+                    2019年12月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/08" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/08"}'>
+                    2019年8月                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/07" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/07"}'>
+                    2019年7月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/06" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/06"}'>
+                    2019年6月                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/05" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/05"}'>
+                    2019年5月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/03" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/03"}'>
+                    2019年3月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/02" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/02"}'>
+                    2019年2月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2019/01" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2019/01"}'>
+                    2019年1月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2018/12" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2018/12"}'>
+                    2018年12月                    <span class="count float-right">14篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2018/11" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2018/11"}'>
+                    2018年11月                    <span class="count float-right">12篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2018/10" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2018/10"}'>
+                    2018年10月                    <span class="count float-right">14篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2018/09" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2018/09"}'>
+                    2018年9月                    <span class="count float-right">39篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2018/08" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2018/08"}'>
+                    2018年8月                    <span class="count float-right">26篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/qq_40416052/article/month/2018/06" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/qq_40416052/article/month/2018/06"}'>
+                    2018年6月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/qq_40416052/article/details/82493916"}' 
+                     href="https://blog.csdn.net/qq_40416052/article/details/82493916" >
+                                                【C++】动态内存分配详解（new/new[]和delete/delete[]）                    </a>
+					<p class="read">阅读数 <span>33996</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/qq_40416052/article/details/82528676"}' 
+                     href="https://blog.csdn.net/qq_40416052/article/details/82528676" >
+                                                【C++】命名空间(namespace)详解                    </a>
+					<p class="read">阅读数 <span>29930</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/qq_40416052/article/details/82746348"}' 
+                     href="https://blog.csdn.net/qq_40416052/article/details/82746348" >
+                                                补码-加法与减法运算                    </a>
+					<p class="read">阅读数 <span>20418</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/qq_40416052/article/details/85273756"}' 
+                     href="https://blog.csdn.net/qq_40416052/article/details/85273756" >
+                                                ObjectARX2018+AutoCAD2018+VS2015开发环境配置                    </a>
+					<p class="read">阅读数 <span>3993</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/qq_40416052/article/details/85240158"}' 
+                     href="https://blog.csdn.net/qq_40416052/article/details/85240158" >
+                                                无法处理文件 Snoop\Forms\BindingMap.resx，因为它位于 Internet 或受限区域中，或者文件上具有 Web 标记。要想处理这些文件，请删除 Web 标记。                    </a>
+					<p class="read">阅读数 <span>3371</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/qq_40416052/article/details/82426560#comments"}'  target="_blank" href="https://blog.csdn.net/qq_40416052/article/details/82426560#comments">C++和C相互调用-extern ...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/Duke_dyf" class="user-name" target="_blank">Duke_dyf：</a>谢谢小哥哥，❤。                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/qq_40416052/article/details/90695534#comments"}'  target="_blank" href="https://blog.csdn.net/qq_40416052/article/details/90695534#comments">ObjectARX(C++)-CA...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_46436278" class="user-name" target="_blank">qq_46436278：</a>你好我想问一下我调试时出现无调试信息的提示框，也不能自动打开CAD，想知道什么原因，谢谢                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/qq_40416052/article/details/81940683#comments"}'  target="_blank" href="https://blog.csdn.net/qq_40416052/article/details/81940683#comments">MFC-打开文件对话框和文件拖拽功...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qhaiwyy" class="user-name" target="_blank">qhaiwyy：</a>CString m_SelectedPath;
+里面说的一个地方错了，导致程序崩溃， 应该改成如下
+DDX_Text(pDX, IDC_EDITBROWSE_INPUTFILE, m_SelectedPath);
+而不是 : DDX_Control(pDX, IDC_EDITBROWSE_INPUTFILE, (CWnd&amp;)m_SelectedPath);                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/qq_40416052/article/details/99713658#comments"}'  target="_blank" href="https://blog.csdn.net/qq_40416052/article/details/99713658#comments">MFC 给不规则的多边形闭合区域填...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/weixin_43371653" class="user-name" target="_blank">weixin_43371653：</a>这个CLine是怎么来的                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/qq_40416052/article/details/103701756#comments"}'  target="_blank" href="https://blog.csdn.net/qq_40416052/article/details/103701756#comments">C++编写的表白小程序(图片围成爱...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_45020818" class="user-name" target="_blank">qq_45020818：</a>很强                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+	<div id="asideFooter">
+                    <div class="aside-box">
+                <div id="kp_box_57" data-pid="57"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&a=707&c=0&k=&d=1&t=3&u=2363e902715542e18745f285ec067b35"></div>            </div>
+        		<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script src="https://g.csdnimg.cn/user-tooltip/1.9/user-tooltip.js"  type="text/javascript"></script>
+    </div>
+                <div class="recommend-right  align-items-stretch clearfix">
+      <aside class="recommend-right_aside">
+        <div id="recommend-right" style="height:100%;">
+          <div class='d-flex flex-column aside-box groupfile' id="groupfile">
+            <h3 class="aside-title">目录</h3>
+            <div class="align-items-stretch group_item">
+              <div class="toc-container">
+              <div class="pos-box">
+                <div class="icon-arrow"></div>
+                <div class="scroll-box">
+                  <div class="toc-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+                        <div id="addAdBox" style="display:none">
+                  <div id="kp_box_479" data-pid="479"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页右上视窗 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="9261210258"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=479&a=874&c=0&k=&d=1&t=3&u=874b64c2e4504d85b9f4dc2f5e6adb96"></div>              </div>
+                    <div class='aside-box kind_person d-flex flex-column'>
+          <h3 class="aside-title">分类专栏</h3>
+              <div class="align-items-stretch kindof_item">
+                <div class="aside-content">
+                  <ul>
+                                        <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9592139.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9592139.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_9592139.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190918140213434.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">桥梁建筑结构设计程序开发</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">2篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7763163.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7763163.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_7763163.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151117521.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">ObjectARX二次开发</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">33篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7944426.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7944426.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_7944426.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151124774.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">每周完成一个ARTS</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">15篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7946878.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7946878.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_7946878.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151124774.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">算法与数据结构</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">3篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7959221.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7959221.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_7959221.html">
+                                                                <img src="https://img-blog.csdnimg.cn/2019091813595558.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">MFC</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">5篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7960585.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7960585.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_7960585.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151117521.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">LeetCode</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">19篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7971371.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_7971371.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_7971371.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190918140037908.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">C++</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">22篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8064451.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8064451.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_8064451.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151026427.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">计算机组成原理</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">2篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266496.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266496.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_8266496.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151026427.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">深度探索c++对象模型</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">5篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266590.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8266590.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_8266590.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151026427.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">C语言进阶剖析</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">4篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8273377.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8273377.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_8273377.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151117521.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">汇编语言</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">2篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8520486.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_8520486.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_8520486.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190927151117521.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">Revit二次开发</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">18篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9015813.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9015813.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_9015813.html">
+                                                                <img src="https://img-blog.csdnimg.cn/20190918140053667.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">ObjectARX视频教程</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">2篇</span>
+                                                        </a>
+                      </li>
+                                          <li class="">
+                                                    <a class="clearfix" 
+                                                        data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9210877.html"}'
+                              data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/qq_40416052/category_9210877.html"}'
+                                                      href="https://blog.csdn.net/qq_40416052/category_9210877.html">
+                                                                <img src="https://img-blog.csdnimg.cn/2019092715111047.png" alt="">
+                                                            <!--####是否付费-->
+                              <span class="title oneline"><span class="text">计算几何</span>
+                                                                </span>
+                              <!--####是否付费-->
+                                                                <span class="count float-right">3篇</span>
+                                                        </a>
+                      </li>
+                                      </ul>
+              </div>
+              </div>
+              
+          </div>
+      </div>
+      </aside>  
+    </div>
+    
+    </div>
+<div class="mask-dark"></div>
+<div class="tool-box vertical">
+	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p id="supportCount"></p>
+			</button>
+		</li>
+		<li class="to-commentBox" id = 'sharePost' data-report-click='{"mod":"popu_794","dest":"https://blog.csdn.net/qq_40416052/article/details/82426560"}'>
+			<a class="btn-comments low-height hover-box" >
+				<svg class="icon hover-hide" aria-hidden="true" style="padding-top: 3px;">
+					<use xlink:href="#icon-csdnc-fenxiang"></use>
+				</svg>
+				<span class="hover-show text">海报</span>
+				<p class="">
+				</p>
+			</a>
+		</li>
+		<li class="to-commentBox">
+						<a class="btn-comments long-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+						1				</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<a class="btn-toc low-height hover-box btn-comments" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</a>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+		</li>
+		<li>
+			<a class="btn-bookmark low-height hover-box btn-comments"  data-report-click='{"mod":"popu_824"}' title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true" style="padding-top: 2px;">
+					<use xlink:href="#icon-shoucangjia"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true" style="padding-top: 2px;">
+					<use xlink:href="#icon-csdnc-Collection-G" ></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+				<a id="btnQrShare" class="bds_weixin clear-share-style" data-report-click='{"mod":"popu_831","dest":""}'  title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="prev btn-comments low-height hover-box" href="https://blog.csdn.net/qq_40416052/article/details/82422317" title="【LeetCode】167. Two Sum II - Input array is sorted（两数之和 II - 输入有序数组）-暴力解法、二分查找法、对撞指针法">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="next btn-comments hover-box low-height" href="https://blog.csdn.net/qq_40416052/article/details/82493916" title="【C++】动态内存分配详解（new/new[]和delete/delete[]）">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/qq_40416052/article/details/82422317" title="【LeetCode】167. Two Sum II - Input array is sorted（两数之和 II - 输入有序数组）-暴力解法、二分查找法、对撞指针法">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/qq_40416052/article/details/82493916" title="【C++】动态内存分配详解（new/new[]和delete/delete[]）">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+        		<li class="to-commentBox to-reward">
+			<a class="btn-comments low-height hover-box" data-report-click='{"mod":"popu_830" "dest":""}'  title="打赏">
+				<svg class="hover-hide" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<g transform="translate(-1398.000000, -486.000000)" fill-rule="nonzero">
+							<g transform="translate(1398.000000, 486.000000)">
+								<path d="M0,12 C0,16.287187 2.287187,20.2487113 6,22.3923048 C9.7128129,24.5358984 14.2871871,24.5358984 18,22.3923048 C21.712813,20.2487113 24,16.287187 24,12 C24,5.37258296 18.627417,0 12,0 C5.372583,0 0,5.37258296 0,12 Z" id="路径" fill-opacity="0.3" fill="#FF5A52"></path>
+								<path d="M2.09340659,11.9505494 C2.09340659,15.4721673 3.97216734,18.7262766 7.02197798,20.4870856 C10.0717886,22.2478946 13.8293103,22.2478946 16.8791209,20.4870856 C19.9289316,18.7262766 21.8076923,15.4721673 21.8076923,11.9505494 C21.8076923,6.50659974 17.3944991,2.09340659 11.9505495,2.09340659 C6.50659977,2.09340659 2.09340659,6.50659974 2.09340659,11.9505494 Z" id="路径" fill="#F63D47"></path>
+								<path d="M11.3005025,5.28638434 L12.7115578,5.28638434 L12.7115578,6.87854416 L14.1105528,6.87854416 C14.4,6.39607148 14.6592965,5.89550609 14.8884422,5.37081705 L16.1849246,5.82313519 C15.99799,6.23926787 15.7929648,6.58906055 15.5758794,6.88457507 L18,6.88457507 L18,9.84575109 L16.6733668,9.84575109 L16.6733668,8.03647857 L7.33869347,8.03647857 L7.33869347,9.85781291 L6,9.85781291 L6,6.87854416 L8.51457286,6.87854416 C8.31557789,6.52875147 8.08040201,6.1910206 7.80904523,5.86535155 L9.08140703,5.4009716 C9.39497488,5.80504246 9.67236181,6.29957695 9.92562814,6.88457507 L11.3065327,6.88457507 L11.3065327,5.28638434 L11.3005025,5.28638434 Z M12.8571429,13.9657994 C12.6552823,15.5675992 12.2332101,16.6234672 11.5848095,17.1394027 C10.8813559,17.8053195 9.1991844,18.2312662 6.54441188,18.4292415 L6,17.2233922 C8.22046642,17.1394027 9.68854339,16.8454395 10.3919969,16.3415024 C11.0098127,15.8735609 11.3768319,15.0456644 11.4930547,13.8578129 L12.8571429,13.9657994 Z M16.8571429,12.1435272 L16.8571429,15.9892245 L15.5161905,15.9892245 L15.5161905,13.3067319 L9.05523809,13.3067319 L9.05523809,16.1435272 L7.71428571,16.1435272 L7.71428571,12.1435272 L16.8571429,12.1435272 L16.8571429,12.1435272 Z M8.28571429,8.71495577 L15.7142857,8.71495577 L15.7142857,11.5720986 L8.28571429,11.5720986 L8.28571429,8.71495577 L8.28571429,8.71495577 Z M14.5714286,10.4292415 L14.5714286,9.28638434 L10,9.28638434 L10,10.4292415 L14.5714286,10.4292415 Z M12.9579832,16.1435272 C14.8187275,16.4853162 16.4993998,16.9018717 18,17.3931934 L17.2436975,18.4292415 C15.635054,17.8311106 13.9783914,17.3664911 12.2857143,17.0407235 L12.9579832,16.1435272 L12.9579832,16.1435272 Z" id="形状" fill="#FFFFFF"></path>
+							</g>
+						</g>
+					</g>
+				</svg>
+				<span class="hover-show text">打赏</span>
+			</a>
+							<div id="reward" class="reward-box">
+	<p class="rewad-title">打赏<span class="reward-close"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span></p>
+	<dl>
+		<dd><a href="javascript:;"><img src="https://profile.csdnimg.cn/B/D/B/3_qq_40416052" alt=""></a></dd>
+		<dt>
+			<p class="blog-name">Civil跨界工程师</p>
+			<p class="blog-discript">“你的鼓励将是我创作的最大动力”</p>
+		</dt>
+	</dl>
+	<div class="money-box">
+        			            	<span class="choosed choose_money" data-id="5">5C币</span>
+			        							<span class="choose_money" data-id="10">10C币</span>
+			        							<span class="choose_money" data-id="20">20C币</span>
+			        							<span class="choose_money" data-id="50">50C币</span>
+			        							<span class="choose_money" data-id="100">100C币</span>
+			        							<span class="choose_money" data-id="200">200C币</span>
+			        	</div>
+	<div class="sure-box">
+		<p class="is-have-money"><a class="reward-sure">确定</a></p>
+	</div>
+</div>
+
+					</li>
+        	</ul>
+</div>
+<div id = 'tool-post-common'>
+	<div class = 'tool_post_box'>
+		<img class = 'tool_post_img' src="https://csdnimg.cn/release/phoenix/write/assets/postShareBack.png" alt="">
+		<div id = 'shareCode'></div>
+	</div>
+</div>
+<div id="share-bg-shadow">
+<div id="share-qrcode-box">
+    <h3>分享到微信朋友圈</h3>
+    <div class='qrcode-img-box'>
+        <a class="btn-close">×</a>
+        <div id='shareQrCode'></div>
+	</div>
+    <p>扫一扫，手机浏览</p>
+</div>
+</div>
+<script>
+		var imgReal = new Image();
+		imgReal.src = "https://csdnimg.cn/release/phoenix/write/assets/postShareBack.png"
+</script>
+<script type=text/javascript crossorigin src="https://csdnimg.cn/release/phoenix/production/qrcode-7c90a92189.min.js"></script>
+<script type=text/javascript crossorigin src="https://csdnimg.cn/release/phoenix/production/icon-1349369f06.js"></script>
+<script src="//g.csdnimg.cn/??sharewx/1.2.1/sharewx.js" type="text/javascript"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/collection-box/1.1.7/collection-box.js"></script><script>
+    var recommendCount = 40;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 16;
+    var articleId = "82426560";
+    var commentscount = 1;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/qq_40416052/article/details/82426560";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "C++和C相互调用-extern C的使用_C/C++_Civil跨界工程师-CSDN博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = 'github-gist';
+	var highlight = ["C","C","\u76f8\u4e92","\u8c03\u7528","-extern","C","\u4f7f\u7528"];//高亮数组
+
+    var share_card_url = 'https://blog.csdn.net/qq_40416052/article/shareArticleCardPage?article_id=82426560'
+    var RecommendBlogExpertList = [{"user_name":"MonroeD","nick_name":"\u9ed1\u5e3d\u5b50\u548c\u732b","avatar":"https:\/\/profile.csdnimg.cn\/4\/C\/8\/3_monroed","is_expert":false,"article_count":161,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"lixiaogang_theanswer","nick_name":"\u6b64\u5904\u4e0d\u5f52\u725b\u987f\u7ba1","avatar":"https:\/\/profile.csdnimg.cn\/C\/5\/0\/3_lixiaogang_theanswer","is_expert":false,"article_count":274,"rank":"6000+"},{"user_name":"lengji22","nick_name":"\u897f\u5457","avatar":"https:\/\/profile.csdnimg.cn\/9\/E\/9\/3_lengji22","is_expert":false,"article_count":14,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"u014783685","nick_name":"obatmg","avatar":"https:\/\/profile.csdnimg.cn\/0\/4\/9\/3_u014783685","is_expert":false,"article_count":20,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"weixin_36725931","nick_name":"\u5ead\u6811","avatar":"https:\/\/profile.csdnimg.cn\/8\/D\/1\/3_weixin_36725931","is_expert":false,"article_count":27,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"fengbingchun","nick_name":"fengbingchun","avatar":"https:\/\/profile.csdnimg.cn\/6\/6\/F\/3_fengbingchun","is_expert":true,"article_count":824,"rank":"70"},{"user_name":"joris30","nick_name":"joris30","avatar":"https:\/\/profile.csdnimg.cn\/B\/E\/7\/3_joris30","is_expert":false,"article_count":80,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"weixin_41192637","nick_name":"Sister_Paul","avatar":"https:\/\/profile.csdnimg.cn\/5\/8\/C\/3_weixin_41192637","is_expert":false,"article_count":19,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"weixin_34248487","nick_name":"weixin_34248487","avatar":"https:\/\/profile.csdnimg.cn\/3\/F\/D\/3_weixin_34248487","is_expert":false,"article_count":4636,"rank":"\u5343\u91cc\u4e4b\u5916"},{"user_name":"chengqiuming","nick_name":"cakincheng","avatar":"https:\/\/profile.csdnimg.cn\/9\/E\/A\/3_chengqiuming","is_expert":false,"article_count":4095,"rank":"72"}];
+	var articleType = 1;
+	var CopyrightContent = '';
+    </script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+<div class="skin-boxshadow"></div>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+    <!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.0/ckeditor/plugins/chart/chart.css" />
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.6.0/ckeditor/plugins/chart/lib/chart.min.js"></script>
+    <script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.6.0/ckeditor/plugins/chart/widget2chart.js"></script>
+    <script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-f91259fb12.js"></script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.0/ckeditor/plugins/codesnippet/lib/highlight/styles/github-gist.css">
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            qr: {
+                isShow: false,
+            }
+        }
+    }
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            window.csdn.userLogin.loadAjax(function(res){
+                showReport(false,articleTitles);
+            })
+        });
+    })
+</script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/iconfont/csdnc-c439e66521.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-da450fe83c.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-8748e19bcd.min.js"></script>
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-e2b6be7b58.min.js"></script>
+<script src="https://g.csdnimg.cn/copyright/1.0.3/copyright.js" type="text/javascript"></script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/??login-box/1.1.1/30/login-box.js,login-box/1.1.1/30/login-auto.js"></script>
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+</script>
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+    <script src="//g.csdnimg.cn/baidu-search/1.0.2/baidu-search.js"  type="text/javascript"></script>
+</html>

@@ -1,0 +1,5 @@
+2019-07-01 10:48:06,878 - &(levelname)s - debug message
+2019-07-01 10:48:06,878 - &(levelname)s - info message
+2019-07-01 10:48:06,878 - &(levelname)s - warning message
+2019-07-01 10:48:06,879 - &(levelname)s - error message
+2019-07-01 10:48:06,879 - &(levelname)s - critical message

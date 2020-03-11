@@ -1,0 +1,40 @@
+DEBUG:root:This is a debug log.
+INFO:root:This is a info log.
+WARNING:root:This is a warning log.
+ERROR:root:This is a error log.
+CRITICAL:root:This is a critical log.
+DEBUG:root:This is a debug log.
+INFO:root:This is a info log.
+WARNING:root:This is a warning log.
+ERROR:root:This is a error log.
+CRITICAL:root:This is a critical log.
+2019-07-01 09:51:01,181=====DEBUG+++++(message)s
+2019-07-01 09:51:01,181=====INFO+++++(message)s
+2019-07-01 09:51:01,181=====WARNING+++++(message)s
+2019-07-01 09:51:01,181=====ERROR+++++(message)s
+2019-07-01 09:51:01,181=====CRITICAL+++++(message)s
+2019-07-01 09:51:01,181=====DEBUG+++++(message)s
+2019-07-01 09:51:01,181=====INFO+++++(message)s
+2019-07-01 09:51:01,181=====WARNING+++++(message)s
+2019-07-01 09:51:01,182=====ERROR+++++(message)s
+2019-07-01 09:51:01,182=====CRITICAL+++++(message)s
+2019-07-01 09:52:24,155=====DEBUG+++++This is a debug log.
+2019-07-01 09:52:24,155=====INFO+++++This is a info log.
+2019-07-01 09:52:24,155=====WARNING+++++This is a warning log.
+2019-07-01 09:52:24,155=====ERROR+++++This is a error log.
+2019-07-01 09:52:24,155=====CRITICAL+++++This is a critical log.
+2019-07-01 09:52:24,155=====DEBUG+++++This is a debug log.
+2019-07-01 09:52:24,156=====INFO+++++This is a info log.
+2019-07-01 09:52:24,156=====WARNING+++++This is a warning log.
+2019-07-01 09:52:24,156=====ERROR+++++This is a error log.
+2019-07-01 09:52:24,156=====CRITICAL+++++This is a critical log.
+2019-10-05 10:53:46,693=====DEBUG+++++This is a debug log.
+2019-10-05 10:53:46,708=====INFO+++++This is a info log.
+2019-10-05 10:53:46,708=====WARNING+++++This is a warning log.
+2019-10-05 10:53:46,708=====ERROR+++++This is a error log.
+2019-10-05 10:53:46,708=====CRITICAL+++++This is a critical log.
+2019-10-05 10:53:46,708=====DEBUG+++++This is a debug log.
+2019-10-05 10:53:46,708=====INFO+++++This is a info log.
+2019-10-05 10:53:46,708=====WARNING+++++This is a warning log.
+2019-10-05 10:53:46,708=====ERROR+++++This is a error log.
+2019-10-05 10:53:46,709=====CRITICAL+++++This is a critical log.

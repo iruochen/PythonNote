@@ -1,6 +1,7 @@
 '''
 直线绘制案例
 '''
+
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -15,3 +16,4 @@ plt.ylabel('y axis caption')
 plt.plot(x, y)
 # 显示
 plt.show()
+
